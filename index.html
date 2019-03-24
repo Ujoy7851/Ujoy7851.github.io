@@ -76,7 +76,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/19/hello-world/">Hello World</a>
+      <a class="article-title" href="/2019/03/19/hello-world/">Hexo + Github page로 블로그 시작하기</a>
     </h1>
   
 
@@ -84,20 +84,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="Git-page"><a href="#Git-page" class="headerlink" title="Git page"></a>Git page</h2><h3 id="Github-repository-생성"><a href="#Github-repository-생성" class="headerlink" title="Github repository 생성"></a>Github repository 생성</h3><ul>
+<li>new repository</li>
+<li>repository 이름을 USERNAME.github.io</li>
+<li>create repository</li>
+</ul>
+<h3 id="Clone-the-repository"><a href="#Clone-the-repository" class="headerlink" title="Clone the repository"></a>Clone the repository</h3><p>생성된 repository를 로컬에 복사<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/username/username.github.io</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="준비"><a href="#준비" class="headerlink" title="준비"></a>준비</h3><ul>
+<li>Node.js, npm</li>
+<li>Git</li>
+</ul>
+<h3 id="Hexo-CLI-설치-및-블로그-생성"><a href="#Hexo-CLI-설치-및-블로그-생성" class="headerlink" title="Hexo CLI 설치 및 블로그 생성"></a>Hexo CLI 설치 및 블로그 생성</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h3 id="설정파일-업데이트"><a href="#설정파일-업데이트" class="headerlink" title="설정파일 업데이트"></a>설정파일 업데이트</h3><p>root 디렉토리에 생성된 _config.yml이라는 파일을 다음과 같이 수정</p>
+<ul>
+<li><p>Site 정보 - 블로그 이름과 소개</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 블로그 이름</span><br><span class="line">subtitle: </span><br><span class="line">description:</span><br><span class="line">author:</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>URL 정보</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url: https://username.github.io</span><br><span class="line">root: /</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Github 정보 - 본인의 Git page의 정보를 입력</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/username/username.github.io</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="로컬에서-테스트"><a href="#로컬에서-테스트" class="headerlink" title="로컬에서 테스트"></a>로컬에서 테스트</h3><p>로컬에서 서버를 실행시켜 블로그 확인<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp; hexo server</span><br></pre></td></tr></table></figure></p>
+<p><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
+<h3 id="Hexo-deployer-설치"><a href="#Hexo-deployer-설치" class="headerlink" title="Hexo deployer 설치"></a>Hexo deployer 설치</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm insatll hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Post-작성-및-배포하기"><a href="#Post-작성-및-배포하기" class="headerlink" title="Post 작성 및 배포하기"></a>Post 작성 및 배포하기</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p>source/_posts 폴더에 markdown 파일 생성됨<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">또는</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">또는 </span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<h3 id="Theme-변경시-또는-페이지-업데이트-안될-경우"><a href="#Theme-변경시-또는-페이지-업데이트-안될-경우" class="headerlink" title="Theme 변경시 또는 페이지 업데이트 안될 경우"></a>Theme 변경시 또는 페이지 업데이트 안될 경우</h3><p>hexo를 clean하고 재배포해야 적용됨</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo deploy --generate (Generate와 Deploy 동시에 실행)</span><br><span class="line">또는</span><br><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
+<p>Hexo - <a href="https://hexo.io" target="_blank" rel="noopener">https://hexo.io</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://Ujoy7851.github.io/2019/03/19/hello-world/" data-id="cjtfgyssv0000kkv7i3ouwz6t" class="article-share-link">Share</a>
+      <a data-url="https://Ujoy7851.github.io/2019/03/19/hello-world/" data-id="cjtmjbefz0000xov7f3as0lcr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -138,7 +163,7 @@
       <ul>
         
           <li>
-            <a href="/2019/03/19/hello-world/">Hello World</a>
+            <a href="/2019/03/19/hello-world/">Hexo + Github page로 블로그 시작하기</a>
           </li>
         
       </ul>
