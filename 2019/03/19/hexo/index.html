@@ -6,22 +6,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="유조이&#39;s 블로그">
-    <title>Archives: 2019 - 유조이&#39;s 블로그</title>
+    <title>Hexo + Github page로 블로그 시작하기 - 유조이&#39;s 블로그</title>
     <meta name="author" content="Ujoy">
     
     
     
-    <script type="application/ld+json">{}</script>
-    <meta name="description" content="기억력을 믿지 못해 시작한 블로그">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"]},"articleBody":"\n#Git pageGithub repository 생성\nnew repository\nrepository 이름을 USERNAME.github.io\ncreate repository\n\nClone the repository생성된 repository를 로컬에 복사1$ git clone https://github.com/username/username.github.io\n\n#Hexo준비\nNode.js, npm\nGit\n\nHexo CLI 설치 및 블로그 생성1234$ npm install hexo-cli -g$ hexo init blog$ cd blog$ npm install\n설정파일 업데이트root 디렉토리에 생성된 _config.yml이라는 파일을 다음과 같이 수정\n\nSite 정보 - 블로그 이름과 소개\n1234title: 블로그 이름subtitle: description:author:\n\nURL 정보\n1234url: https://username.github.ioroot: /permalink: :year/:month/:day/:title/permalink_defaults:\n\nGithub 정보 - 본인의 Git page의 정보를 입력\n1234# Deploymentdeploy:  type: git  repo: https://github.com/username/username.github.io\n\n\n로컬에서 테스트로컬에서 서버를 실행시켜 블로그 확인1&amp; hexo server\nhttp://localhost:4000\nHexo deployer 설치1$ npm insatll hexo-deployer-git --save\n\n#Post 작성 및 배포하기Create a new postsource/_posts 폴더에 markdown 파일 생성됨1$ hexo new \"My New Post\"\nGenerate static files123$ hexo generate또는$ hexo g\nDeploy to remote sites123$ hexo deploy또는 $ hexo d\nTheme 변경시 또는 페이지 업데이트 안될 경우hexo를 clean하고 재배포해야 적용됨\n1234$ hexo clean$ hexo deploy --generate (Generate와 Deploy 동시에 실행)또는$ hexo d -g\n\n#테마 변경하기원하는 테마 선택https://hexo.io/themes/index.html\n해당 테마의 github로 이동해 설명 참고\n테마설치블로그를 생성했던 폴더로 이동해 themes 폴더에 github에 있는 소스 복사 (이 포스트에서는 clean-blog라는 테마를 적용했다)1$ git clone https://github.com/klugjo/hexo-theme-clean-blog.git clean-blog\n\ntheme 폴더를 보면 기본으로 적용되는 landscape 테마 폴더 존재함\n여러개의 테마 폴더가 있어도 상관없음\n\n테마설정\nthemes/clean-blog 경로에 있는 _config.yml 수정해 테마 설정\n블로그의 최상위 경로에 있는 _config.yml 수정해서 블로그에 테마 적용\n\nTags 페이지 생성1$ hexo new page \"tags\"\npage를 생성하면 source 경로에 tags 폴더가 생기고 index.md 파일 생성됨. 아래처럼 수정\n1234---title: tagstype: &quot;tags&quot;---\nCategories 페이지 생성1$ hexo new page \"categories\"\npage를 생성하면 source 경로에 tags 폴더가 생기고 index.md 파일 생성됨\n1234---title: categoriestype: &quot;categories&quot;---\n테마 적용블로그 최상단 폴더의 _config.yml 수정1234# Extensions## Plugins: https://hexo.io/plugins/## Themes: https://hexo.io/themes/theme: clean-blog\n12$ hexo clean$ hexo d -g\n\n참고사이트\nhttps://hexo.io\nhttps://www.holaxprogramming.com/2017/04/16/github-page-and-hexo/\nhttps://kdydesign.github.io/2017/07/07/hexo-themes/#\nhttps://jeyolog.github.io/2018/08/11/tranquilpeak-configuration/\n","dateCreated":"2019-03-19T16:18:38+09:00","dateModified":"2019-03-24T17:19:10+09:00","datePublished":"2019-03-19T16:18:38+09:00","description":"","headline":"Hexo + Github page로 블로그 시작하기","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://Ujoy7851.github.io/2019/03/19/hexo/"},"publisher":{"@type":"Organization","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"]},"url":"https://Ujoy7851.github.io/2019/03/19/hexo/","keywords":"hexo, github page"}</script>
+    <meta name="description" content="#Git pageGithub repository 생성 new repository repository 이름을 USERNAME.github.io create repository  Clone the repository생성된 repository를 로컬에 복사1$ git clone https://github.com/username/username.github.io">
+<meta name="keywords" content="hexo,github page">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="유조이&#39;s 블로그">
-<meta property="og:url" content="https://Ujoy7851.github.io/archives/2019/index.html">
+<meta property="og:title" content="Hexo + Github page로 블로그 시작하기">
+<meta property="og:url" content="https://Ujoy7851.github.io/2019/03/19/hexo/index.html">
 <meta property="og:site_name" content="유조이&#39;s 블로그">
-<meta property="og:description" content="기억력을 믿지 못해 시작한 블로그">
+<meta property="og:description" content="#Git pageGithub repository 생성 new repository repository 이름을 USERNAME.github.io create repository  Clone the repository생성된 repository를 로컬에 복사1$ git clone https://github.com/username/username.github.io">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-03-24T08:19:10.548Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="유조이&#39;s 블로그">
-<meta name="twitter:description" content="기억력을 믿지 못해 시작한 블로그">
+<meta name="twitter:title" content="Hexo + Github page로 블로그 시작하기">
+<meta name="twitter:description" content="#Git pageGithub repository 생성 new repository repository 이름을 USERNAME.github.io create repository  Clone the repository생성된 repository를 로컬에 복사1$ git clone https://github.com/username/username.github.io">
     
     
         
@@ -150,21 +152,17 @@
                         hasCoverMetaIn
                         ">
                 
-    <section class="postShorten-group main-content-wrap">
+<article class="post">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom">
-        <div class="postShorten-wrap">
-            
-            <div class="postShorten-header">
-                <h1 class="postShorten-title">
-                    
-                        <a class="link-unstyled" href="/2019/03/19/hexo/">
-                            Hexo + Github page로 블로그 시작하기
-                        </a>
-                    
-                </h1>
-                <div class="postShorten-meta">
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Hexo + Github page로 블로그 시작하기
+        </h1>
+    
+    
+        <div class="post-meta">
     <time datetime="2019-03-19T16:18:38+09:00">
 	
 		    Mar 19, 2019
@@ -179,10 +177,13 @@
     
 </div>
 
-            </div>
-            
-                <div class="postShorten-content">
-                    <a id="more"></a>
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <a id="more"></a>
 <h2 id="Git-page"><a href="#Git-page" class="headerlink" title="#Git page"></a>#Git page</h2><h4 id="Github-repository-생성"><a href="#Github-repository-생성" class="headerlink" title="Github repository 생성"></a>Github repository 생성</h4><ul>
 <li>new repository</li>
 <li>repository 이름을 USERNAME.github.io</li>
@@ -243,32 +244,68 @@
 <p><a href="https://kdydesign.github.io/2017/07/07/hexo-themes/#" target="_blank" rel="noopener">https://kdydesign.github.io/2017/07/07/hexo-themes/#</a></p>
 <p><a href="https://jeyolog.github.io/2018/08/11/tranquilpeak-configuration/" target="_blank" rel="noopener">https://jeyolog.github.io/2018/08/11/tranquilpeak-configuration/</a></p>
 
-                    
-                        
-
-                    
-                    
-                        <p>
-                            <a href="/2019/03/19/hexo/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
-                    
-                </div>
             
+
         </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
         
-    </article>
-    
-    <div class="pagination-bar">
-    <ul class="pagination">
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/github-page/">github page</a> <a class="tag tag--primary tag--small t-link" href="/tags/hexo/">hexo</a>
+
+            </div>
         
         
-        <li class="pagination-number">page 1 of 1</li>
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
     </ul>
 </div>
 
-</section>
+
+        
+        
+            
+        
+    </div>
+</article>
 
 
 
@@ -279,6 +316,53 @@
 </footer>
 
             </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="5">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+
             
         </div>
         
@@ -319,6 +403,8 @@
         <!--SCRIPTS-->
 <script src="/assets/js/script-dbd16rvloemmuxdzniplmnxxvwoz24eya9wol0b7vvmlokgqsjivmb8dnscy.min.js"></script>
 <!--SCRIPTS END-->
+
+    
 
 
 
