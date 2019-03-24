@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="UJoyBlog">
+    <title>hexo 블로그에 Tranquilpeak 테마 적용하기 - UJoyBlog</title>
+    <meta name="author" content="Ujoy">
+    
+        <meta name="keywords" content="hexo,github page">
+    
+    
+        <link rel="icon" href="https://Ujoy7851.github.io/assets/images/favicon.png">
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg"},"articleBody":"\nhexo로 만들어진 블로그들을 구경하다가 ‘Tranquilpeak’ 테마를 발견하고 따라서 적용해보았다. 그 과정에서 많은 시행착오를 겪었고 나같은 사람들이 더 이상 생기지 않길 바라는 마음에서 정리해보았다.\n#Tranquilpeak 테마 설치하기최신버전 다운로드다른 테마들과 다르게 Tranquilpeak 테마는 github에서 바로 clone해서 적용하면 안된다.아래 링크에 가서 최신버전의 .zip 파일을 다운받은 뒤 themes 폴더에 압축을 풀고 tranquilpeak으로 이름을 변경한다.Download\n설정파일 수정hexo 환경설정 파일인 _config.yml에서 테마 관련내용을 수정한다.1theme: tranquilpeak\nnode-sass, hexo-renderer-sass 설치hexo 루트폴더에 설치해준다.123npm install --save node-sassnpm install --save hexo-renderer-sass\n\n#Sidebar 설정 변경하기테마를 처음 적용하면 home 페이지 좌측에 커다란 sidebar가 고정되어있다.테마폴더의 _config.xml을 수정하면 sidebar의 크기를 줄이거나 버튼이 눌렀을 때만 sidebar가 나오도록 할 수 있다.이 블로그는 현재 4로 설정되어 있다.1sidebar_behavior: 4\n\n#프로필 사진과 설명 변경하기테마폴더의 _config.xml에서 다음과 같이 수정하면 sidebar에 표시되는 프로필 사진이 변경된다.12author:    picture: image.png\n이때 hexo 루트폴더의 source 폴더아래 assets/images 폴더를 만들고 image.png 파일을 넣어주어야 한다.사진 아래 표시되는 설명내용은themes/tranquilpeak/languages 경로아래 en.yml 파일을 통해 수정해준다.123author:    bio: &quot;기억력을 믿지 못해 블로그를 시작했다.&quot;    job: &quot;student&quot;\n\n#front matter(머리말) 레이아웃 설정하기scaffolds 폴더의 post.md에서 레이아웃을 설정해주면 새로운 post를 만들때마다 설정한대로 머리말이 생성된다.기본은 다음과 같고 테마에 따라 다양한 옵션을 추가할 수 있다.12345---title: &#123;&#123; title &#125;&#125;date: &#123;&#123; date &#125;&#125;tags:---\ntags글 내용과 관련된 tag123tags:- 태그명1- 태그명2\ncategories글의 카테고리123categories:- 카테고리명1- 카테고리명2\nkeywordssearch engine을 위한 키워드123keywords:- 키워드1- 키워드2\n이 외에 다양한 옵션들은 여기서 확인가능\n\n#썸네일 적용하기front matter에 다음 내용을 추가한다.12thumbnailImage: image.pngthumbnailImagePosition: right\n\n썸네일의 위치는 right, left, bottom 중 하나를 선택한다.\n썸네일의 적용을 위해서는 _post 폴더아래 post의 파일명과 같은 폴더를 생성하고 그 안에 thumbnailImage를 넣어주어야 한다.\n예를들어, post1.md에 썸네일을 적용하고 싶은 경우 _post 폴더에 post1 폴더를 만들고 그 안에 image.png를 넣는다. 이때, post1.md는 post1이 아닌 _post 폴더에 있어야 함.\n마지막으로 루트폴더의 _config.yml에서 다음과 같이 수정해주어야 썸네일이 적용된다.1post_asset_folder: true\n\n\n\n#Continue reading 버튼포스트를 길게 작성하고 인덱스 페이지에 가보면 글의 내용이 전부 표시되어 글 목록을 한눈에 파악하기 어렵다.&lt;!-- more --&gt;과 &lt;!-- excerpt --&gt;를 이용하면 포스트의 일부내용만 표시되도록 할 수 있다.\n\n&lt;!-- more --&gt;123어쩌고 저쩌고1&lt;!-- more --&gt;어쩌고 저쩌고2\n\n\n포스트 중간에 &lt;!-- more --&gt;을 넣어주면 인덱스 페이지에서는 어쩌고 저쩌고1의 내용만 표시된다.포스트에서는 어쩌고 저쩌고1과 어쩌고 저쩌고2의 내용 모두 보여진다.\n\n&lt;!-- excerpt --&gt;123어쩌고 저쩌고1&lt;!-- excerpt --&gt;어쩌고 저쩌고2\n\n\n포스트 중간에 &lt;!-- excerpt --&gt;을 넣어주면 인덱스 페이지에서는 어쩌고 저쩌고1의 내용만 표시된다.포스트에서는 어쩌고 저쩌고1의 내용은 표시되지 않고 어쩌고 저쩌고2의 내용만 보여진다.","dateCreated":"2019-03-24T20:48:42+09:00","dateModified":"2019-03-24T21:46:13+09:00","datePublished":"2019-03-24T20:48:42+09:00","description":"테마 적용하면서 겪은 시행착오들을 정리해놓은 포스팅","headline":"hexo 블로그에 Tranquilpeak 테마 적용하기","image":["hexo.png"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://Ujoy7851.github.io/2019/03/24/hexo-theme/"},"publisher":{"@type":"Organization","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg","logo":{"@type":"ImageObject","url":"egg.jpg"}},"url":"https://Ujoy7851.github.io/2019/03/24/hexo-theme/","keywords":"hexo, tranquilpeak","thumbnailUrl":"hexo.png"}</script>
+    <meta name="description" content="테마 적용하면서 겪은 시행착오들을 정리해놓은 포스팅">
+<meta name="keywords" content="hexo,github page">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="hexo 블로그에 Tranquilpeak 테마 적용하기">
+<meta property="og:url" content="https://Ujoy7851.github.io/2019/03/24/hexo-theme/index.html">
+<meta property="og:site_name" content="UJoyBlog">
+<meta property="og:description" content="테마 적용하면서 겪은 시행착오들을 정리해놓은 포스팅">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-03-24T12:46:13.693Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo 블로그에 Tranquilpeak 테마 적용하기">
+<meta name="twitter:description" content="테마 적용하면서 겪은 시행착오들을 정리해놓은 포스팅">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://Ujoy7851.github.io/assets/images/egg.jpg"/>
+    
+    
+        <meta property="og:image" content="https://Ujoy7851.github.io/2019/03/24/hexo-theme/hexo.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://Ujoy7851.github.io/2019/03/24/hexo-theme/hexo.png" />
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-c4ozcsklz4kht2pebhp44xorvyverh23toayhn7i6ubrpyedak24hv1v0hyd.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">UJoyBlog</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+            <img class="header-picture" src="/assets/images/egg.jpg" alt="Author&#39;s picture">
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/egg.jpg" alt="Author&#39;s picture">
+                </a>
+                <h4 class="sidebar-profile-name">Ujoy</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>기억력을 믿지 못해 블로그를 시작했다.</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link open-algolia-search" href="#search" title="Search">
+                    
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Search</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="#about" title="About">
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/Ujoy7851" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/atom.xml" title="RSS">
+                    
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            hexo 블로그에 Tranquilpeak 테마 적용하기
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2019-03-24T20:48:42+09:00">
+	
+		    Mar 24, 2019
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Git/">Git</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <!-- excerpt -->
+<p>hexo로 만들어진 블로그들을 구경하다가 ‘Tranquilpeak’ 테마를 발견하고 따라서 적용해보았다. 그 과정에서 많은 시행착오를 겪었고 나같은 사람들이 더 이상 생기지 않길 바라는 마음에서 정리해보았다.</p>
+<h2 id="Tranquilpeak-테마-설치하기"><a href="#Tranquilpeak-테마-설치하기" class="headerlink" title="#Tranquilpeak 테마 설치하기"></a>#Tranquilpeak 테마 설치하기</h2><h4 id="최신버전-다운로드"><a href="#최신버전-다운로드" class="headerlink" title="최신버전 다운로드"></a>최신버전 다운로드</h4><p>다른 테마들과 다르게 Tranquilpeak 테마는 github에서 바로 clone해서 적용하면 안된다.<br>아래 링크에 가서 최신버전의 .zip 파일을 다운받은 뒤 themes 폴더에 압축을 풀고 tranquilpeak으로 이름을 변경한다.<br><a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases" target="_blank" rel="noopener">Download</a></p>
+<h4 id="설정파일-수정"><a href="#설정파일-수정" class="headerlink" title="설정파일 수정"></a>설정파일 수정</h4><p>hexo 환경설정 파일인 _config.yml에서 테마 관련내용을 수정한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: tranquilpeak</span><br></pre></td></tr></table></figure></p>
+<h4 id="node-sass-hexo-renderer-sass-설치"><a href="#node-sass-hexo-renderer-sass-설치" class="headerlink" title="node-sass, hexo-renderer-sass 설치"></a>node-sass, hexo-renderer-sass 설치</h4><p>hexo 루트폴더에 설치해준다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install --save node-sass</span><br><span class="line"></span><br><span class="line">npm install --save hexo-renderer-sass</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="Sidebar-설정-변경하기"><a href="#Sidebar-설정-변경하기" class="headerlink" title="#Sidebar 설정 변경하기"></a>#Sidebar 설정 변경하기</h2><p>테마를 처음 적용하면 home 페이지 좌측에 커다란 sidebar가 고정되어있다.<br>테마폴더의 _config.xml을 수정하면 sidebar의 크기를 줄이거나 버튼이 눌렀을 때만 sidebar가 나오도록 할 수 있다.<br>이 블로그는 현재 4로 설정되어 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sidebar_behavior: 4</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="프로필-사진과-설명-변경하기"><a href="#프로필-사진과-설명-변경하기" class="headerlink" title="#프로필 사진과 설명 변경하기"></a>#프로필 사진과 설명 변경하기</h2><p>테마폴더의 _config.xml에서 다음과 같이 수정하면 sidebar에 표시되는 프로필 사진이 변경된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">author:</span><br><span class="line">    picture: image.png</span><br></pre></td></tr></table></figure></p>
+<p>이때 hexo 루트폴더의 source 폴더아래 assets/images 폴더를 만들고 image.png 파일을 넣어주어야 한다.<br>사진 아래 표시되는 설명내용은<br>themes/tranquilpeak/languages 경로아래 en.yml 파일을 통해 수정해준다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">author:</span><br><span class="line">    bio: &quot;기억력을 믿지 못해 블로그를 시작했다.&quot;</span><br><span class="line">    job: &quot;student&quot;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="front-matter-머리말-레이아웃-설정하기"><a href="#front-matter-머리말-레이아웃-설정하기" class="headerlink" title="#front matter(머리말) 레이아웃 설정하기"></a>#front matter(머리말) 레이아웃 설정하기</h2><p>scaffolds 폴더의 post.md에서 레이아웃을 설정해주면 새로운 post를 만들때마다 설정한대로 머리말이 생성된다.<br>기본은 다음과 같고 테마에 따라 다양한 옵션을 추가할 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<h4 id="tags"><a href="#tags" class="headerlink" title="tags"></a>tags</h4><p>글 내용과 관련된 tag<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tags:</span><br><span class="line">- 태그명1</span><br><span class="line">- 태그명2</span><br></pre></td></tr></table></figure></p>
+<h4 id="categories"><a href="#categories" class="headerlink" title="categories"></a>categories</h4><p>글의 카테고리<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">- 카테고리명1</span><br><span class="line">- 카테고리명2</span><br></pre></td></tr></table></figure></p>
+<h4 id="keywords"><a href="#keywords" class="headerlink" title="keywords"></a>keywords</h4><p>search engine을 위한 키워드<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">keywords:</span><br><span class="line">- 키워드1</span><br><span class="line">- 키워드2</span><br></pre></td></tr></table></figure></p>
+<p>이 외에 다양한 옵션들은 <a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/DOCUMENTATION.md" target="_blank" rel="noopener">여기</a>서 확인가능</p>
+<hr>
+<h2 id="썸네일-적용하기"><a href="#썸네일-적용하기" class="headerlink" title="#썸네일 적용하기"></a>#썸네일 적용하기</h2><p>front matter에 다음 내용을 추가한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">thumbnailImage: image.png</span><br><span class="line">thumbnailImagePosition: right</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>썸네일의 위치는 right, left, bottom 중 하나를 선택한다.</li>
+<li>썸네일의 적용을 위해서는 _post 폴더아래 post의 파일명과 같은 폴더를 생성하고 그 안에 thumbnailImage를 넣어주어야 한다.</li>
+<li>예를들어, post1.md에 썸네일을 적용하고 싶은 경우 _post 폴더에 post1 폴더를 만들고 그 안에 image.png를 넣는다. 이때, post1.md는 post1이 아닌 _post 폴더에 있어야 함.</li>
+<li>마지막으로 루트폴더의 _config.yml에서 다음과 같이 수정해주어야 썸네일이 적용된다.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="Continue-reading-버튼"><a href="#Continue-reading-버튼" class="headerlink" title="#Continue reading 버튼"></a>#Continue reading 버튼</h2><p>포스트를 길게 작성하고 인덱스 페이지에 가보면 글의 내용이 전부 표시되어 글 목록을 한눈에 파악하기 어렵다.<br><code>&lt;!-- more --&gt;</code>과 <code>&lt;!-- excerpt --&gt;</code>를 이용하면 포스트의 일부내용만 표시되도록 할 수 있다.</p>
+<ul>
+<li><code>&lt;!-- more --&gt;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">어쩌고 저쩌고1</span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line">어쩌고 저쩌고2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>포스트 중간에 <code>&lt;!-- more --&gt;</code>을 넣어주면 인덱스 페이지에서는 어쩌고 저쩌고1의 내용만 표시된다.<br>포스트에서는 어쩌고 저쩌고1과 어쩌고 저쩌고2의 내용 모두 보여진다.</p>
+<ul>
+<li><code>&lt;!-- excerpt --&gt;</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">어쩌고 저쩌고1</span><br><span class="line">&lt;!-- excerpt --&gt;</span><br><span class="line">어쩌고 저쩌고2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>포스트 중간에 <code>&lt;!-- excerpt --&gt;</code>을 넣어주면 인덱스 페이지에서는 어쩌고 저쩌고1의 내용만 표시된다.<br>포스트에서는 어쩌고 저쩌고1의 내용은 표시되지 않고 어쩌고 저쩌고2의 내용만 보여진다.</p>
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/hexo/">hexo</a> <a class="tag tag--primary tag--small t-link" href="/tags/tranquilpeak/">tranquilpeak</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/03/19/hexo/" data-tooltip="Hexo + Github page로 블로그 시작하기" aria-label="NEXT: Hexo + Github page로 블로그 시작하기">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2019 Ujoy. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/03/19/hexo/" data-tooltip="Hexo + Github page로 블로그 시작하기" aria-label="NEXT: Hexo + Github page로 블로그 시작하기">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/egg.jpg" alt="Author&#39;s picture">
+        
+            <h4 id="about-card-name">Ujoy</h4>
+        
+            <div id="about-card-bio"><p>기억력을 믿지 못해 블로그를 시작했다.</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>student</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br>
+                대한민국
+            </div>
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover-v1.2.0.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-dbd16rvloemmuxdzniplmnxxvwoz24eya9wol0b7vvmlokgqsjivmb8dnscy.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>
