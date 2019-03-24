@@ -152,7 +152,7 @@
                 <section class="postShorten-group main-content-wrap">
     
     
-    <article class="postShorten postShorten--thumbnailimg-bottom">
+    <article class="postShorten postShorten--thumbnailimg-right">
         <div class="postShorten-wrap">
             
             <div class="postShorten-header">
@@ -180,78 +180,13 @@
 
             </div>
             
-                <div class="postShorten-content">
-                    <a id="more"></a>
-<h2 id="Git-page"><a href="#Git-page" class="headerlink" title="#Git page"></a>#Git page</h2><h4 id="Github-repository-생성"><a href="#Github-repository-생성" class="headerlink" title="Github repository 생성"></a>Github repository 생성</h4><ul>
-<li>new repository</li>
-<li>repository 이름을 USERNAME.github.io</li>
-<li>create repository</li>
-</ul>
-<h4 id="Clone-the-repository"><a href="#Clone-the-repository" class="headerlink" title="Clone the repository"></a>Clone the repository</h4><p>생성된 repository를 로컬에 복사<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/username/username.github.io</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="#Hexo"></a>#Hexo</h2><h4 id="준비"><a href="#준비" class="headerlink" title="준비"></a>준비</h4><ul>
-<li>Node.js, npm</li>
-<li>Git</li>
-</ul>
-<h4 id="Hexo-CLI-설치-및-블로그-생성"><a href="#Hexo-CLI-설치-및-블로그-생성" class="headerlink" title="Hexo CLI 설치 및 블로그 생성"></a>Hexo CLI 설치 및 블로그 생성</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<h4 id="설정파일-업데이트"><a href="#설정파일-업데이트" class="headerlink" title="설정파일 업데이트"></a>설정파일 업데이트</h4><p>root 디렉토리에 생성된 _config.yml이라는 파일을 다음과 같이 수정</p>
-<ul>
-<li><p>Site 정보 - 블로그 이름과 소개</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 블로그 이름</span><br><span class="line">subtitle: </span><br><span class="line">description:</span><br><span class="line">author:</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>URL 정보</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url: https://username.github.io</span><br><span class="line">root: /</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Github 정보 - 본인의 Git page의 정보를 입력</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: https://github.com/username/username.github.io</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="로컬에서-테스트"><a href="#로컬에서-테스트" class="headerlink" title="로컬에서 테스트"></a>로컬에서 테스트</h4><p>로컬에서 서버를 실행시켜 블로그 확인<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp; hexo server</span><br></pre></td></tr></table></figure></p>
-<p><a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></p>
-<h4 id="Hexo-deployer-설치"><a href="#Hexo-deployer-설치" class="headerlink" title="Hexo deployer 설치"></a>Hexo deployer 설치</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm insatll hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="Post-작성-및-배포하기"><a href="#Post-작성-및-배포하기" class="headerlink" title="#Post 작성 및 배포하기"></a>#Post 작성 및 배포하기</h2><h4 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h4><p>source/_posts 폴더에 markdown 파일 생성됨<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure></p>
-<h4 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">또는</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<h4 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">또는 </span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<h4 id="Theme-변경시-또는-페이지-업데이트-안될-경우"><a href="#Theme-변경시-또는-페이지-업데이트-안될-경우" class="headerlink" title="Theme 변경시 또는 페이지 업데이트 안될 경우"></a>Theme 변경시 또는 페이지 업데이트 안될 경우</h4><p>hexo를 clean하고 재배포해야 적용됨</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo deploy --generate (Generate와 Deploy 동시에 실행)</span><br><span class="line">또는</span><br><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="테마-변경하기"><a href="#테마-변경하기" class="headerlink" title="#테마 변경하기"></a>#테마 변경하기</h2><h4 id="원하는-테마-선택"><a href="#원하는-테마-선택" class="headerlink" title="원하는 테마 선택"></a>원하는 테마 선택</h4><pre><code>https://hexo.io/themes/index.html
-</code></pre><p>해당 테마의 github로 이동해 설명 참고</p>
-<h4 id="테마설치"><a href="#테마설치" class="headerlink" title="테마설치"></a>테마설치</h4><p>블로그를 생성했던 폴더로 이동해 themes 폴더에 github에 있는 소스 복사 (이 포스트에서는 clean-blog라는 테마를 적용했다)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://github.com/klugjo/hexo-theme-clean-blog.git clean-blog</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>theme 폴더를 보면 기본으로 적용되는 landscape 테마 폴더 존재함</li>
-<li>여러개의 테마 폴더가 있어도 상관없음</li>
-</ul>
-<h4 id="테마설정"><a href="#테마설정" class="headerlink" title="테마설정"></a>테마설정</h4><ul>
-<li>themes/clean-blog 경로에 있는 _config.yml 수정해 테마 설정</li>
-<li>블로그의 최상위 경로에 있는 _config.yml 수정해서 블로그에 테마 적용</li>
-</ul>
-<h4 id="Tags-페이지-생성"><a href="#Tags-페이지-생성" class="headerlink" title="Tags 페이지 생성"></a>Tags 페이지 생성</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">"tags"</span></span><br></pre></td></tr></table></figure>
-<p>page를 생성하면 source 경로에 tags 폴더가 생기고 index.md 파일 생성됨. 아래처럼 수정</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h4 id="Categories-페이지-생성"><a href="#Categories-페이지-생성" class="headerlink" title="Categories 페이지 생성"></a>Categories 페이지 생성</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">"categories"</span></span><br></pre></td></tr></table></figure>
-<p>page를 생성하면 source 경로에 tags 폴더가 생기고 index.md 파일 생성됨</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h4 id="테마-적용"><a href="#테마-적용" class="headerlink" title="테마 적용"></a>테마 적용</h4><p>블로그 최상단 폴더의 _config.yml 수정<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https://hexo.io/plugins/</span><br><span class="line">## Themes: https://hexo.io/themes/</span><br><span class="line">theme: clean-blog</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
-<hr>
-<p>참고사이트</p>
-<p><a href="https://hexo.io" target="_blank" rel="noopener">https://hexo.io</a></p>
-<p><a href="https://www.holaxprogramming.com/2017/04/16/github-page-and-hexo/" target="_blank" rel="noopener">https://www.holaxprogramming.com/2017/04/16/github-page-and-hexo/</a></p>
-<p><a href="https://kdydesign.github.io/2017/07/07/hexo-themes/#" target="_blank" rel="noopener">https://kdydesign.github.io/2017/07/07/hexo-themes/#</a></p>
-<p><a href="https://jeyolog.github.io/2018/08/11/tranquilpeak-configuration/" target="_blank" rel="noopener">https://jeyolog.github.io/2018/08/11/tranquilpeak-configuration/</a></p>
-
+                <div class="postShorten-excerpt">
+                    <h2 id="Git-page"><a href="#Git-page" class="headerlink" title="#Git page"></a>#Git page</h2><h4 id="Github-repository-생성"><a href="#Github-repository-생성" class="headerlink" title="Github repository 생성"></a>Github repository 생성</h4>
                     
+                        <a href="/2019/03/19/hexo/" class="postShorten-excerpt_link link">
+                            Continue reading
+                        </a>
                         
-
-                    
-                    
-                        <p>
-                            <a href="/2019/03/19/hexo/#post-footer" class="postShorten-excerpt_link link">
-                                Comment and share
-                            </a>
-                        </p>
                     
                 </div>
             
@@ -313,7 +248,7 @@
 
         
         
-<div id="cover" style="background-image:url('/assets/images/cover.jpg');"></div>
+<div id="cover" style="background-image:url('/assets/images/cover-v1.2.0.jpg');"></div>
         <!--SCRIPTS-->
 <script src="/assets/js/script-dbd16rvloemmuxdzniplmnxxvwoz24eya9wol0b7vvmlokgqsjivmb8dnscy.min.js"></script>
 <!--SCRIPTS END-->
