@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://Ujoy7851.github.io/"/>
-  <updated>2019-04-03T15:12:41.853Z</updated>
+  <updated>2019-05-14T06:41:44.922Z</updated>
   <id>https://Ujoy7851.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vue.js_1</title>
+    <link href="https://Ujoy7851.github.io/2019/05/14/Vue-js-1/"/>
+    <id>https://Ujoy7851.github.io/2019/05/14/Vue-js-1/</id>
+    <published>2019-05-14T04:32:56.000Z</published>
+    <updated>2019-05-14T06:41:44.922Z</updated>
+    
+    <content type="html"><![CDATA[<!-- excerpt --></p><h2 id="Vue-js란-무엇인가"><a href="#Vue-js란-무엇인가" class="headerlink" title="Vue.js란 무엇인가?"></a>Vue.js란 무엇인가?</h2><h4 id="Vue-js란"><a href="#Vue-js란" class="headerlink" title="Vue.js란"></a>Vue.js란</h4><ul><li>웹 페이지 화면을 개발하기 위한 프런트엔트 프레임워크</li><li>뷰의 코어 라이브러리는 라이브러리 역할 뿐만 아니라 프레임워크 역할도 할 수 있는 점진적인 프레임워크</li><li>다른 프레임워크 (Angular, React)와 비교해 가볍고 빠름</li><li>배우기 쉽고 성능이 좋음</li></ul><p><code>프레임워크</code>: 개발 생산성을 높이기 위해 일정한 틀과 규칙에 따라 개발하도록 미리 구조를 정의해놓은 도구</p><p><code>라이브러리</code>: 자주 사용되는 기능들을 모아 재활용할 수 있도록 정리한 기술 모음집</p><h4 id="Vue-js-특징"><a href="#Vue-js-특징" class="headerlink" title="Vue.js 특징"></a>Vue.js 특징</h4><ol><li>MVVM 패턴의 ‘View Model’에 해당하는 화면단 라이브러리 (DOM Listener + Data Binding)</li></ol><ul><li>DOM Listener - DOM의 변경 내역에 대해 즉각적으로 반응하여 특정 로직을 수행</li><li>Data Binding - View에 표시되는 내용과 모델의 데이터를 동기화</li><li>예) 버튼을 클릭하면 돔 리스너에서 클릭 감지 -&gt; 버튼과 관련된 로직의 처리 -&gt; 결과에 해당하는 데이터를 모델에서 데이터바인딩으로 가져와 화면에 나타냄</li></ul><ol start="2"><li>컴포넌트 기반 프레임워크</li></ol><ul><li>컴포넌트를 조합하여 화면 구성</li><li>코드의 재사용을 높이고 HTML 코드에서 화면의 구조를 직관적으로 파악 가능 </li></ul><ol start="3"><li>리액트와 앵귤러의 장점을 가진 프레임워크</li></ol><ul><li>앵귤러의 양방향 데이터 바인딩 - 화면에 표스되는 값과 프레임워크의 모델 데이터 값이 동기화되어 한쪽이 변경되면 다른 한쪽도 자동으로 변경</li><li>리액트의 단방향 데이터 흐름 - 컴포넌트 간에 데이터를 전달할 떄 항상 상위 컴포넌트에서 하위 컴포넌트 방향으로만 전달</li><li>리액트의 가상 돔 렌더링 - 특정 돔 요소를 축다하거나 삭제하는 변경이 일어날 때 화면 전체를 그리지 않고 프레임워크에서 정의한 방식에 따라 화면 갱신. 브라우저의 성능 부하가 줄어들어 속도가 빨라짐</li></ul><p><code>MVVM 패턴</code>: 마크업 언어나 GUI 코드를 비지니스 로직 또는 백엔드 로직과 분리하여 개발하는 소프트웨어 디자인 패턴. 즉, 프런트엔드의 화면 동작과 관련된 로직과 백엔드의 데이터 처리 로직을 분리하여 가독성을 높임</p><p><img src="https://documentation.devexpress.com/HelpResource.ashx?help=WPF&amp;document=img147219.jpg" alt="MVVM"></p><ul><li>View - 사용자에게 보이는 화면</li><li>View Model - 뷰와 모델의 중간 영역.</li><li>Model - 서버에서 가져온 데이터를 자바스크립트 객체 형태로 저장</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;‘Vue.js 입문’이라는 책을 바탕으로 정리한 포스팅 1&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Vue.js" scheme="https://Ujoy7851.github.io/categories/Vue-js/"/>
+    
+    
+      <category term="Vue.js" scheme="https://Ujoy7851.github.io/tags/Vue-js/"/>
+    
+  </entry>
   
   <entry>
     <title>VS code에서 c/c++ 컴파일 환경설정하기 (Window)</title>

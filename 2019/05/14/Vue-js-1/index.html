@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="UJoyBlog">
+    <title>Vue.js_1 - UJoyBlog</title>
+    <meta name="author" content="Ujoy">
+    
+        <meta name="keywords" content="Vue.js">
+    
+    
+        <link rel="icon" href="https://Ujoy7851.github.io/assets/images/favicon.png">
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg"},"articleBody":"\nVue.js란 무엇인가?Vue.js란\n웹 페이지 화면을 개발하기 위한 프런트엔트 프레임워크\n뷰의 코어 라이브러리는 라이브러리 역할 뿐만 아니라 프레임워크 역할도 할 수 있는 점진적인 프레임워크\n다른 프레임워크 (Angular, React)와 비교해 가볍고 빠름\n배우기 쉽고 성능이 좋음\n\n프레임워크: 개발 생산성을 높이기 위해 일정한 틀과 규칙에 따라 개발하도록 미리 구조를 정의해놓은 도구\n라이브러리: 자주 사용되는 기능들을 모아 재활용할 수 있도록 정리한 기술 모음집\nVue.js 특징\nMVVM 패턴의 ‘View Model’에 해당하는 화면단 라이브러리 (DOM Listener + Data Binding)\n\n\nDOM Listener - DOM의 변경 내역에 대해 즉각적으로 반응하여 특정 로직을 수행\nData Binding - View에 표시되는 내용과 모델의 데이터를 동기화\n예) 버튼을 클릭하면 돔 리스너에서 클릭 감지 -&gt; 버튼과 관련된 로직의 처리 -&gt; 결과에 해당하는 데이터를 모델에서 데이터바인딩으로 가져와 화면에 나타냄\n\n\n컴포넌트 기반 프레임워크\n\n\n컴포넌트를 조합하여 화면 구성\n코드의 재사용을 높이고 HTML 코드에서 화면의 구조를 직관적으로 파악 가능 \n\n\n리액트와 앵귤러의 장점을 가진 프레임워크\n\n\n앵귤러의 양방향 데이터 바인딩 - 화면에 표스되는 값과 프레임워크의 모델 데이터 값이 동기화되어 한쪽이 변경되면 다른 한쪽도 자동으로 변경\n리액트의 단방향 데이터 흐름 - 컴포넌트 간에 데이터를 전달할 떄 항상 상위 컴포넌트에서 하위 컴포넌트 방향으로만 전달\n리액트의 가상 돔 렌더링 - 특정 돔 요소를 축다하거나 삭제하는 변경이 일어날 때 화면 전체를 그리지 않고 프레임워크에서 정의한 방식에 따라 화면 갱신. 브라우저의 성능 부하가 줄어들어 속도가 빨라짐\n\nMVVM 패턴: 마크업 언어나 GUI 코드를 비지니스 로직 또는 백엔드 로직과 분리하여 개발하는 소프트웨어 디자인 패턴. 즉, 프런트엔드의 화면 동작과 관련된 로직과 백엔드의 데이터 처리 로직을 분리하여 가독성을 높임\n\n\nView - 사용자에게 보이는 화면\nView Model - 뷰와 모델의 중간 영역.\nModel - 서버에서 가져온 데이터를 자바스크립트 객체 형태로 저장\n","dateCreated":"2019-05-14T13:32:56+09:00","dateModified":"2019-05-14T15:41:44+09:00","datePublished":"2019-05-14T13:32:56+09:00","description":"‘Vue.js 입문’이라는 책을 바탕으로 정리한 포스팅 1","headline":"Vue.js_1","image":["logo.png"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://Ujoy7851.github.io/2019/05/14/Vue-js-1/"},"publisher":{"@type":"Organization","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg","logo":{"@type":"ImageObject","url":"egg.jpg"}},"url":"https://Ujoy7851.github.io/2019/05/14/Vue-js-1/","keywords":"Vue.js","thumbnailUrl":"logo.png"}</script>
+    <meta name="description" content="‘Vue.js 입문’이라는 책을 바탕으로 정리한 포스팅 1">
+<meta name="keywords" content="Vue.js">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Vue.js_1">
+<meta property="og:url" content="https://Ujoy7851.github.io/2019/05/14/Vue-js-1/index.html">
+<meta property="og:site_name" content="UJoyBlog">
+<meta property="og:description" content="‘Vue.js 입문’이라는 책을 바탕으로 정리한 포스팅 1">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://documentation.devexpress.com/HelpResource.ashx?help=WPF&document=img147219.jpg">
+<meta property="og:updated_time" content="2019-05-14T06:41:44.922Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue.js_1">
+<meta name="twitter:description" content="‘Vue.js 입문’이라는 책을 바탕으로 정리한 포스팅 1">
+<meta name="twitter:image" content="https://documentation.devexpress.com/HelpResource.ashx?help=WPF&document=img147219.jpg">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://Ujoy7851.github.io/assets/images/egg.jpg"/>
+    
+    
+        <meta property="og:image" content="https://Ujoy7851.github.io/2019/05/14/Vue-js-1/logo.png"/>
+        <meta class="swiftype" name="image" data-type="enum" content="https://Ujoy7851.github.io/2019/05/14/Vue-js-1/logo.png" />
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-c4ozcsklz4kht2pebhp44xorvyverh23toayhn7i6ubrpyedak24hv1v0hyd.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">UJoyBlog</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+            <img class="header-picture" src="/assets/images/egg.jpg" alt="Author&#39;s picture">
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/egg.jpg" alt="Author&#39;s picture">
+                </a>
+                <h4 class="sidebar-profile-name">Ujoy</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>기억력을 믿지 못해 블로그를 시작했다.</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link open-algolia-search" href="#search" title="Search">
+                    
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Search</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="#about" title="About">
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/Ujoy7851" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/atom.xml" title="RSS">
+                    
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            Vue.js_1
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2019-05-14T13:32:56+09:00">
+	
+		    May 14, 2019
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Vue-js/">Vue.js</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <!-- excerpt --><p></p>
+<h2 id="Vue-js란-무엇인가"><a href="#Vue-js란-무엇인가" class="headerlink" title="Vue.js란 무엇인가?"></a>Vue.js란 무엇인가?</h2><h4 id="Vue-js란"><a href="#Vue-js란" class="headerlink" title="Vue.js란"></a>Vue.js란</h4><ul>
+<li>웹 페이지 화면을 개발하기 위한 프런트엔트 프레임워크</li>
+<li>뷰의 코어 라이브러리는 라이브러리 역할 뿐만 아니라 프레임워크 역할도 할 수 있는 점진적인 프레임워크</li>
+<li>다른 프레임워크 (Angular, React)와 비교해 가볍고 빠름</li>
+<li>배우기 쉽고 성능이 좋음</li>
+</ul>
+<p><code>프레임워크</code>: 개발 생산성을 높이기 위해 일정한 틀과 규칙에 따라 개발하도록 미리 구조를 정의해놓은 도구</p>
+<p><code>라이브러리</code>: 자주 사용되는 기능들을 모아 재활용할 수 있도록 정리한 기술 모음집</p>
+<h4 id="Vue-js-특징"><a href="#Vue-js-특징" class="headerlink" title="Vue.js 특징"></a>Vue.js 특징</h4><ol>
+<li>MVVM 패턴의 ‘View Model’에 해당하는 화면단 라이브러리 (DOM Listener + Data Binding)</li>
+</ol>
+<ul>
+<li>DOM Listener - DOM의 변경 내역에 대해 즉각적으로 반응하여 특정 로직을 수행</li>
+<li>Data Binding - View에 표시되는 내용과 모델의 데이터를 동기화</li>
+<li>예) 버튼을 클릭하면 돔 리스너에서 클릭 감지 -&gt; 버튼과 관련된 로직의 처리 -&gt; 결과에 해당하는 데이터를 모델에서 데이터바인딩으로 가져와 화면에 나타냄</li>
+</ul>
+<ol start="2">
+<li>컴포넌트 기반 프레임워크</li>
+</ol>
+<ul>
+<li>컴포넌트를 조합하여 화면 구성</li>
+<li>코드의 재사용을 높이고 HTML 코드에서 화면의 구조를 직관적으로 파악 가능 </li>
+</ul>
+<ol start="3">
+<li>리액트와 앵귤러의 장점을 가진 프레임워크</li>
+</ol>
+<ul>
+<li>앵귤러의 양방향 데이터 바인딩 - 화면에 표스되는 값과 프레임워크의 모델 데이터 값이 동기화되어 한쪽이 변경되면 다른 한쪽도 자동으로 변경</li>
+<li>리액트의 단방향 데이터 흐름 - 컴포넌트 간에 데이터를 전달할 떄 항상 상위 컴포넌트에서 하위 컴포넌트 방향으로만 전달</li>
+<li>리액트의 가상 돔 렌더링 - 특정 돔 요소를 축다하거나 삭제하는 변경이 일어날 때 화면 전체를 그리지 않고 프레임워크에서 정의한 방식에 따라 화면 갱신. 브라우저의 성능 부하가 줄어들어 속도가 빨라짐</li>
+</ul>
+<p><code>MVVM 패턴</code>: 마크업 언어나 GUI 코드를 비지니스 로직 또는 백엔드 로직과 분리하여 개발하는 소프트웨어 디자인 패턴. 즉, 프런트엔드의 화면 동작과 관련된 로직과 백엔드의 데이터 처리 로직을 분리하여 가독성을 높임</p>
+<p><img src="https://documentation.devexpress.com/HelpResource.ashx?help=WPF&amp;document=img147219.jpg" alt="MVVM"></p>
+<ul>
+<li>View - 사용자에게 보이는 화면</li>
+<li>View Model - 뷰와 모델의 중간 영역.</li>
+<li>Model - 서버에서 가져온 데이터를 자바스크립트 객체 형태로 저장</li>
+</ul>
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Vue-js/">Vue.js</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/04/03/visual-studio-c/" data-tooltip="VS code에서 c/c++ 컴파일 환경설정하기 (Window)" aria-label="NEXT: VS code에서 c/c++ 컴파일 환경설정하기 (Window)">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+        
+            
+                <li class="post-action">
+                    <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2019 Ujoy. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/04/03/visual-studio-c/" data-tooltip="VS code에서 c/c++ 컴파일 환경설정하기 (Window)" aria-label="NEXT: VS code에서 c/c++ 컴파일 환경설정하기 (Window)">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+        
+            
+                <li class="post-action">
+                    <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/egg.jpg" alt="Author&#39;s picture">
+        
+            <h4 id="about-card-name">Ujoy</h4>
+        
+            <div id="about-card-bio"><p>기억력을 믿지 못해 블로그를 시작했다.</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>student</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br>
+                대한민국
+            </div>
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover-v1.2.0.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-dbd16rvloemmuxdzniplmnxxvwoz24eya9wol0b7vvmlokgqsjivmb8dnscy.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'https://Ujoy7851.github.io/2019/05/14/Vue-js-1/';
+                 
+                    this.page.identifier = '2019/05/14/Vue-js-1/';
+                 
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'UJoyBlog';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+
+
+
+    </body>
+</html>
