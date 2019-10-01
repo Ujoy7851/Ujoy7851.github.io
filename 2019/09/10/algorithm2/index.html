@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="UJoyBlog">
+    <title>[알고리즘]자료구조_스택 - UJoyBlog</title>
+    <meta name="author" content="Ujoy">
+    
+    
+        <link rel="icon" href="https://Ujoy7851.github.io/assets/images/favicon.png">
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg"},"articleBody":"\n스택\n한쪽 끝에서만 자료를 넣고 뺄 수 있는 자료구조 (LIFO)\npush, pop, empty, top\n일차원 배열 하나로 구현 가능\n123456789101112int stack[10000];int size = 0;void push(int data)&#123;    stack[size] = data;    size += 1;&#125;void pop()&#123;    stack[size - 1] = 0;    size -= 1;&#125;\n\n구현된 라이브러리 사용\n\nC++: std::stack\nJava: Stack\n\n\n\n응용문제\n단어 뒤집기 (9093)\n괄호 (9012)\n스택 수열 (1874)\n에디터 (1406) (링크드 리스트로 풀이 가능)\n\n** c++ 입력 관련 정리\n\ngetline() : 띄어쓰기/공백을 포함한 문자열을 입력 받을 수 있음\n  1234int n;string str;cin &gt;&gt; str; //이 경우 공백 이전까지만 입력받음getline(cin, str);\n\ncin.ignore() : cin &gt;&gt; n으로 정수를 입력받고 바로 getline(cin, str)로 문자열을 입력받고자 할 경우 정수값을 입력한 뒤 누른 엔터가 버퍼에 남아있다가 str에 저장된다. 이럴 때 cin.ignore()로 입력 버퍼의 내용을 제거시켜주면 된다.\n  123456int n;string str;cin &gt;&gt; n;//cin은 띄어쓰기, 엔터, 탭을 기준으로 입력값을 나누고, 이런 문자들이 나오면 무시하기 때문에 버퍼에 그대로 남아있다. 하지만 getline()의 경우 delim을 지정해주지 않으면 엔터('\\n')를 기준으로 입력을 받아들인다.cin.ignore();getline(cin, str);\n\ncin.get() : char 하나 입력 받을 수 있음\n12char str[256];cin.get(str, 256);\n\n","dateCreated":"2019-09-10T14:58:36+09:00","dateModified":"2019-10-01T22:51:22+09:00","datePublished":"2019-09-10T14:58:36+09:00","description":"스택을 이용한 문제 해결 방법","headline":"[알고리즘]자료구조_스택","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://Ujoy7851.github.io/2019/09/10/algorithm2/"},"publisher":{"@type":"Organization","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg","logo":{"@type":"ImageObject","url":"egg.jpg"}},"url":"https://Ujoy7851.github.io/2019/09/10/algorithm2/","keywords":"Algorithm"}</script>
+    <meta name="description" content="스택을 이용한 문제 해결 방법">
+<meta name="keywords" content="Algorithm">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="[알고리즘]자료구조_스택">
+<meta property="og:url" content="https://Ujoy7851.github.io/2019/09/10/algorithm2/index.html">
+<meta property="og:site_name" content="UJoyBlog">
+<meta property="og:description" content="스택을 이용한 문제 해결 방법">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-01T13:51:22.344Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[알고리즘]자료구조_스택">
+<meta name="twitter:description" content="스택을 이용한 문제 해결 방법">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://Ujoy7851.github.io/assets/images/egg.jpg"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-c4ozcsklz4kht2pebhp44xorvyverh23toayhn7i6ubrpyedak24hv1v0hyd.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">UJoyBlog</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+            <img class="header-picture" src="/assets/images/egg.jpg" alt="Author&#39;s picture">
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/egg.jpg" alt="Author&#39;s picture">
+                </a>
+                <h4 class="sidebar-profile-name">Ujoy</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>기억력을 믿지 못해 블로그를 시작했다.</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link open-algolia-search" href="#search" title="Search">
+                    
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Search</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="#about" title="About">
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/Ujoy7851" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/atom.xml" title="RSS">
+                    
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            [알고리즘]자료구조_스택
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2019-09-10T14:58:36+09:00">
+	
+		    Sep 10, 2019
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Programming/">Programming</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <!-- excerpt --><p></p>
+<h3 id="스택"><a href="#스택" class="headerlink" title="스택"></a>스택</h3><ul>
+<li>한쪽 끝에서만 자료를 넣고 뺄 수 있는 자료구조 (LIFO)</li>
+<li>push, pop, empty, top</li>
+<li><p>일차원 배열 하나로 구현 가능</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> <span class="built_in">stack</span>[<span class="number">10000</span>];</span><br><span class="line"><span class="keyword">int</span> size = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>[size] = data;</span><br><span class="line">    size += <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>[size - <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    size -= <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>구현된 라이브러리 사용</p>
+<ul>
+<li>C++: std::stack</li>
+<li>Java: Stack</li>
+</ul>
+</li>
+</ul>
+<h4 id="응용문제"><a href="#응용문제" class="headerlink" title="응용문제"></a>응용문제</h4><ul>
+<li>단어 뒤집기 (9093)</li>
+<li>괄호 (9012)</li>
+<li>스택 수열 (1874)</li>
+<li>에디터 (1406) (링크드 리스트로 풀이 가능)</li>
+</ul>
+<p>** c++ 입력 관련 정리</p>
+<ul>
+<li><p>getline() : 띄어쓰기/공백을 포함한 문자열을 입력 받을 수 있음</p>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="built_in">string</span> str;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; str; <span class="comment">//이 경우 공백 이전까지만 입력받음</span></span><br><span class="line">getline(<span class="built_in">cin</span>, str);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cin.ignore() : <code>cin &gt;&gt; n</code>으로 정수를 입력받고 바로 <code>getline(cin, str)</code>로 문자열을 입력받고자 할 경우 정수값을 입력한 뒤 누른 엔터가 버퍼에 남아있다가 str에 저장된다. 이럴 때 <code>cin.ignore()</code>로 입력 버퍼의 내용을 제거시켜주면 된다.</p>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="built_in">string</span> str;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line"><span class="comment">//cin은 띄어쓰기, 엔터, 탭을 기준으로 입력값을 나누고, 이런 문자들이 나오면 무시하기 때문에 버퍼에 그대로 남아있다. 하지만 getline()의 경우 delim을 지정해주지 않으면 엔터('\n')를 기준으로 입력을 받아들인다.</span></span><br><span class="line"><span class="built_in">cin</span>.ignore();</span><br><span class="line">getline(<span class="built_in">cin</span>, str);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cin.get() : char 하나 입력 받을 수 있음</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> str[<span class="number">256</span>];</span><br><span class="line"><span class="built_in">cin</span>.get(str, <span class="number">256</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Algorithm/">Algorithm</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/10/01/stack/" data-tooltip="[알고리즘]자료구조_큐" aria-label="PREVIOUS: [알고리즘]자료구조_큐">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/09/09/C/" data-tooltip="C++" aria-label="NEXT: C++">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+        
+            
+                <li class="post-action">
+                    <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2019 Ujoy. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/10/01/stack/" data-tooltip="[알고리즘]자료구조_큐" aria-label="PREVIOUS: [알고리즘]자료구조_큐">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/09/09/C/" data-tooltip="C++" aria-label="NEXT: C++">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+        
+            
+                <li class="post-action">
+                    <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/egg.jpg" alt="Author&#39;s picture">
+        
+            <h4 id="about-card-name">Ujoy</h4>
+        
+            <div id="about-card-bio"><p>기억력을 믿지 못해 블로그를 시작했다.</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>student</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br>
+                대한민국
+            </div>
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover-v1.2.0.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-dbd16rvloemmuxdzniplmnxxvwoz24eya9wol0b7vvmlokgqsjivmb8dnscy.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'https://Ujoy7851.github.io/2019/09/10/algorithm2/';
+                 
+                    this.page.identifier = '2019/09/10/algorithm2/';
+                 
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'UJoyBlog';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+
+
+
+    </body>
+</html>
