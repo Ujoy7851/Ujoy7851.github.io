@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="UJoyBlog">
-    <title>Pseudocode - UJoyBlog</title>
+    <title>[알고리즘]자료구조_큐 - UJoyBlog</title>
     <meta name="author" content="Ujoy">
     
     
@@ -15,19 +15,19 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg"},"articleBody":"\nPseudocode 의사코드란일반적인 언어로  코드를 흉내내어 알고리즘을 써놓은 코드로, 프로그램을 작성하기 전에 알고리즘의 모델을 대략적으로 모델링하는데 사용한다. 프로그래밍 언어처럼 엄밀한 문법을 따를 필요가 없다.\n수식표현\n연산자는 일반적 수학 심볼 사용\n배정문은 &lt;- 사용\n동일 관계 비교 = 사용\n\n함수선언Algorithm name(인수1, 인수2)\n구조적표현\nif … then … (else …)\nwhile … do\nrepeat … until\nloop … do\nfor … do\narray: name[i], name[i, j]\n\n함수표현\n호출: 함수명(인수들)\n반환: return value\n","dateCreated":"2019-08-29T23:58:53+09:00","dateModified":"2019-09-05T13:25:49+09:00","datePublished":"2019-08-29T23:58:53+09:00","description":"Psuedocode란?","headline":"Pseudocode","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://Ujoy7851.github.io/2019/08/29/Pseudocode/"},"publisher":{"@type":"Organization","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg","logo":{"@type":"ImageObject","url":"egg.jpg"}},"url":"https://Ujoy7851.github.io/2019/08/29/Pseudocode/","keywords":"Programming"}</script>
-    <meta name="description" content="Psuedocode란?">
-<meta name="keywords" content="Programming">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg"},"articleBody":"\n큐 (Queue)\n한쪽 끝에서만 자료를 넣고 다른 한쪽 끝에서만 뺄 수 있는 자료구조 (FIFO)\npush, pop, front, back, empty, size\nBFS 알고리즘에 사용\n일차원 배열 하나로 구현 가능\n1234567891011121314int queue[10000];int begin = 0;int end = 0;//큐에 포함된 내용은 [begin, end)void push(int data)&#123;  queue[end] = data;  end += 1;&#125;void pop()&#123;    queue[begin] = 0;    begin += 1;&#125;\n\n구현된 라이브러리 사용 가능\nC++: STL의 queue\nJava: java.util.Queue\n\n\n\n\n\n큐 응용문제\n조세퍼스 문제 (1158)\n\n덱 (Deque, Double-ended queue)\n양 끝에서만 자료를 넣고 뺼 수 있는 자료구조\n사용하는 연산에 따라 스택으로도 큐로도 사용 가능\npush_front, push_back, pop_front, pop_back, front, back\n\n덱 응용문제\n덱 (10866)\n","dateCreated":"2019-10-01T22:33:50+09:00","dateModified":"2019-10-06T21:51:03+09:00","datePublished":"2019-10-01T22:33:50+09:00","description":"큐와 덱","headline":"[알고리즘]자료구조_큐","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://Ujoy7851.github.io/2019/10/01/queue/"},"publisher":{"@type":"Organization","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg","logo":{"@type":"ImageObject","url":"egg.jpg"}},"url":"https://Ujoy7851.github.io/2019/10/01/queue/","keywords":"Algorithm"}</script>
+    <meta name="description" content="큐와 덱">
+<meta name="keywords" content="Algorithm">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Pseudocode">
-<meta property="og:url" content="https://Ujoy7851.github.io/2019/08/29/Pseudocode/index.html">
+<meta property="og:title" content="[알고리즘]자료구조_큐">
+<meta property="og:url" content="https://Ujoy7851.github.io/2019/10/01/queue/index.html">
 <meta property="og:site_name" content="UJoyBlog">
-<meta property="og:description" content="Psuedocode란?">
+<meta property="og:description" content="큐와 덱">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-05T04:25:49.541Z">
+<meta property="og:updated_time" content="2019-10-06T12:51:03.794Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pseudocode">
-<meta name="twitter:description" content="Psuedocode란?">
+<meta name="twitter:title" content="[알고리즘]자료구조_큐">
+<meta name="twitter:description" content="큐와 덱">
     
     
         
@@ -194,14 +194,14 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title">
-            Pseudocode
+            [알고리즘]자료구조_큐
         </h1>
     
     
         <div class="post-meta">
-    <time datetime="2019-08-29T23:58:53+09:00">
+    <time datetime="2019-10-01T22:33:50+09:00">
 	
-		    Aug 29, 2019
+		    Oct 01, 2019
     	
     </time>
     
@@ -220,24 +220,31 @@
     <div class="post-content markdown">
         <div class="main-content-wrap">
             <!-- excerpt --><p></p>
-<h4 id="Pseudocode-의사코드란"><a href="#Pseudocode-의사코드란" class="headerlink" title="Pseudocode 의사코드란"></a>Pseudocode 의사코드란</h4><p>일반적인 언어로  코드를 흉내내어 알고리즘을 써놓은 코드로, 프로그램을 작성하기 전에 알고리즘의 모델을 대략적으로 모델링하는데 사용한다. 프로그래밍 언어처럼 엄밀한 문법을 따를 필요가 없다.</p>
-<h4 id="수식표현"><a href="#수식표현" class="headerlink" title="수식표현"></a>수식표현</h4><ul>
-<li>연산자는 일반적 수학 심볼 사용</li>
-<li>배정문은 <code>&lt;-</code> 사용</li>
-<li>동일 관계 비교 <code>=</code> 사용</li>
+<h3 id="큐-Queue"><a href="#큐-Queue" class="headerlink" title="큐 (Queue)"></a>큐 (Queue)</h3><ul>
+<li>한쪽 끝에서만 자료를 넣고 다른 한쪽 끝에서만 뺄 수 있는 자료구조 (FIFO)</li>
+<li>push, pop, front, back, empty, size</li>
+<li>BFS 알고리즘에 사용</li>
+<li><p>일차원 배열 하나로 구현 가능</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> <span class="built_in">queue</span>[<span class="number">10000</span>];</span><br><span class="line"><span class="keyword">int</span> begin = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> end = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//큐에 포함된 내용은 [begin, end)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">  <span class="built_in">queue</span>[end] = data;</span><br><span class="line">  end += <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>[begin] = <span class="number">0</span>;</span><br><span class="line">    begin += <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>구현된 라이브러리 사용 가능<ul>
+<li>C++: STL의 queue</li>
+<li>Java: java.util.Queue</li>
 </ul>
-<h4 id="함수선언"><a href="#함수선언" class="headerlink" title="함수선언"></a>함수선언</h4><p>Algorithm name(인수1, 인수2)</p>
-<h4 id="구조적표현"><a href="#구조적표현" class="headerlink" title="구조적표현"></a>구조적표현</h4><ul>
-<li>if … then … (else …)</li>
-<li>while … do</li>
-<li>repeat … until</li>
-<li>loop … do</li>
-<li>for … do</li>
-<li>array: name[i], name[i, j]</li>
+</li>
 </ul>
-<h4 id="함수표현"><a href="#함수표현" class="headerlink" title="함수표현"></a>함수표현</h4><ul>
-<li>호출: 함수명(인수들)</li>
-<li>반환: return value</li>
+</li>
+</ul>
+<h4 id="큐-응용문제"><a href="#큐-응용문제" class="headerlink" title="큐 응용문제"></a>큐 응용문제</h4><ul>
+<li>조세퍼스 문제 (1158)</li>
+</ul>
+<h3 id="덱-Deque-Double-ended-queue"><a href="#덱-Deque-Double-ended-queue" class="headerlink" title="덱 (Deque, Double-ended queue)"></a>덱 (Deque, Double-ended queue)</h3><ul>
+<li>양 끝에서만 자료를 넣고 뺼 수 있는 자료구조</li>
+<li>사용하는 연산에 따라 스택으로도 큐로도 사용 가능</li>
+<li>push_front, push_back, pop_front, pop_back, front, back</li>
+</ul>
+<h4 id="덱-응용문제"><a href="#덱-응용문제" class="headerlink" title="덱 응용문제"></a>덱 응용문제</h4><ul>
+<li>덱 (10866)</li>
 </ul>
             
 
@@ -248,7 +255,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Programming/">Programming</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Algorithm/">Algorithm</a>
 
             </div>
         
@@ -259,7 +266,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/09/05/algorithm1/" data-tooltip="[알고리즘]알고리즘 기초" aria-label="PREVIOUS: [알고리즘]알고리즘 기초">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/10/06/math/" data-tooltip="math" aria-label="PREVIOUS: math">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -268,7 +275,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/08/29/array/" data-tooltip="[자료구조]배열, 구조체" aria-label="NEXT: [자료구조]배열, 구조체">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/09/10/stack/" data-tooltip="[알고리즘]자료구조_스택" aria-label="NEXT: [알고리즘]자료구조_스택">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -331,7 +338,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/09/05/algorithm1/" data-tooltip="[알고리즘]알고리즘 기초" aria-label="PREVIOUS: [알고리즘]알고리즘 기초">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/10/06/math/" data-tooltip="math" aria-label="PREVIOUS: math">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -340,7 +347,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/08/29/array/" data-tooltip="[자료구조]배열, 구조체" aria-label="NEXT: [자료구조]배열, 구조체">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/09/10/stack/" data-tooltip="[알고리즘]자료구조_스택" aria-label="NEXT: [알고리즘]자료구조_스택">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -428,9 +435,9 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'https://Ujoy7851.github.io/2019/08/29/Pseudocode/';
+                 this.page.url = 'https://Ujoy7851.github.io/2019/10/01/queue/';
                  
-                    this.page.identifier = '2019/08/29/Pseudocode/';
+                    this.page.identifier = '2019/10/01/queue/';
                  
              };
             (function() {

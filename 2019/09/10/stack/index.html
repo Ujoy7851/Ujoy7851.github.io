@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="UJoyBlog">
-    <title>Pseudocode - UJoyBlog</title>
+    <title>[알고리즘]자료구조_스택 - UJoyBlog</title>
     <meta name="author" content="Ujoy">
     
     
@@ -15,19 +15,19 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg"},"articleBody":"\nPseudocode 의사코드란일반적인 언어로  코드를 흉내내어 알고리즘을 써놓은 코드로, 프로그램을 작성하기 전에 알고리즘의 모델을 대략적으로 모델링하는데 사용한다. 프로그래밍 언어처럼 엄밀한 문법을 따를 필요가 없다.\n수식표현\n연산자는 일반적 수학 심볼 사용\n배정문은 &lt;- 사용\n동일 관계 비교 = 사용\n\n함수선언Algorithm name(인수1, 인수2)\n구조적표현\nif … then … (else …)\nwhile … do\nrepeat … until\nloop … do\nfor … do\narray: name[i], name[i, j]\n\n함수표현\n호출: 함수명(인수들)\n반환: return value\n","dateCreated":"2019-08-29T23:58:53+09:00","dateModified":"2019-09-05T13:25:49+09:00","datePublished":"2019-08-29T23:58:53+09:00","description":"Psuedocode란?","headline":"Pseudocode","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://Ujoy7851.github.io/2019/08/29/Pseudocode/"},"publisher":{"@type":"Organization","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg","logo":{"@type":"ImageObject","url":"egg.jpg"}},"url":"https://Ujoy7851.github.io/2019/08/29/Pseudocode/","keywords":"Programming"}</script>
-    <meta name="description" content="Psuedocode란?">
-<meta name="keywords" content="Programming">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg"},"articleBody":"\n스택\n한쪽 끝에서만 자료를 넣고 뺄 수 있는 자료구조 (LIFO)\npush, pop, empty, top\n일차원 배열 하나로 구현 가능\n123456789101112int stack[10000];int size = 0;void push(int data)&#123;    stack[size] = data;    size += 1;&#125;void pop()&#123;    stack[size - 1] = 0;    size -= 1;&#125;\n\n구현된 라이브러리 사용\n\nC++: std::stack\nJava: Stack\n\n\n\n응용문제\n단어 뒤집기 (9093)\n괄호 (9012)\n스택 수열 (1874)\n에디터 (1406) (링크드 리스트로 풀이 가능)\n단어 뒤집기2 (17413)\n쇠막대기 (10799)\n\n** c++ 입력 관련 정리\n\ngetline() : 띄어쓰기/공백을 포함한 문자열을 입력 받을 수 있음\n  12string str;getline(cin, str);\n\ncin.ignore() : cin &gt;&gt; n으로 정수를 입력받고 바로 getline(cin, str)로 문자열을 입력받고자 할 경우 정수값을 입력한 뒤 누른 엔터가 버퍼에 남아있다가 str에 저장된다. 이럴 때 cin.ignore()로 입력 버퍼의 내용을 제거시켜주면 된다.\n  123456int n;string str;cin &gt;&gt; n;//cin은 띄어쓰기, 엔터, 탭을 기준으로 입력값을 나누고, 이런 문자들이 나오면 무시하기 때문에 버퍼에 그대로 남아있다. 하지만 getline()의 경우 delim을 지정해주지 않으면 엔터('\\n')를 기준으로 입력을 받아들인다.cin.ignore();getline(cin, str);\n\ncin.get() : char 하나 입력 받을 수 있음\n12char str[256];cin.get(str, 256);\n\ncin &gt;&gt; str : cin으로 string도 입력받을 수 있음 (띄어쓰기 전까지 입력받음)\n12string str;cin &gt;&gt; str;\n(cout &lt;&lt; str 처럼 cout으로 string을 출력할 수는 없음)\n123for(char c : str)&#123;  cout &lt;&lt; c;&#125;\n\n문자열은 크게 2가지 형태로 입력가능. C에서와 같이 char str[] 형태로 받는 방법과 헤더파일의 string 클래스를 이용하는 방법. 주의, strlen 함수는 O(n), size 함수는 O(1)이다.\n\n","dateCreated":"2019-09-10T14:58:36+09:00","dateModified":"2019-10-23T20:05:03+09:00","datePublished":"2019-09-10T14:58:36+09:00","description":"스택을 이용한 문제 해결 방법","headline":"[알고리즘]자료구조_스택","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://Ujoy7851.github.io/2019/09/10/stack/"},"publisher":{"@type":"Organization","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg","logo":{"@type":"ImageObject","url":"egg.jpg"}},"url":"https://Ujoy7851.github.io/2019/09/10/stack/","keywords":"Algorithm"}</script>
+    <meta name="description" content="스택을 이용한 문제 해결 방법">
+<meta name="keywords" content="Algorithm">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Pseudocode">
-<meta property="og:url" content="https://Ujoy7851.github.io/2019/08/29/Pseudocode/index.html">
+<meta property="og:title" content="[알고리즘]자료구조_스택">
+<meta property="og:url" content="https://Ujoy7851.github.io/2019/09/10/stack/index.html">
 <meta property="og:site_name" content="UJoyBlog">
-<meta property="og:description" content="Psuedocode란?">
+<meta property="og:description" content="스택을 이용한 문제 해결 방법">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-05T04:25:49.541Z">
+<meta property="og:updated_time" content="2019-10-23T11:05:03.003Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pseudocode">
-<meta name="twitter:description" content="Psuedocode란?">
+<meta name="twitter:title" content="[알고리즘]자료구조_스택">
+<meta name="twitter:description" content="스택을 이용한 문제 해결 방법">
     
     
         
@@ -194,14 +194,14 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title">
-            Pseudocode
+            [알고리즘]자료구조_스택
         </h1>
     
     
         <div class="post-meta">
-    <time datetime="2019-08-29T23:58:53+09:00">
+    <time datetime="2019-09-10T14:58:36+09:00">
 	
-		    Aug 29, 2019
+		    Sep 10, 2019
     	
     </time>
     
@@ -220,24 +220,45 @@
     <div class="post-content markdown">
         <div class="main-content-wrap">
             <!-- excerpt --><p></p>
-<h4 id="Pseudocode-의사코드란"><a href="#Pseudocode-의사코드란" class="headerlink" title="Pseudocode 의사코드란"></a>Pseudocode 의사코드란</h4><p>일반적인 언어로  코드를 흉내내어 알고리즘을 써놓은 코드로, 프로그램을 작성하기 전에 알고리즘의 모델을 대략적으로 모델링하는데 사용한다. 프로그래밍 언어처럼 엄밀한 문법을 따를 필요가 없다.</p>
-<h4 id="수식표현"><a href="#수식표현" class="headerlink" title="수식표현"></a>수식표현</h4><ul>
-<li>연산자는 일반적 수학 심볼 사용</li>
-<li>배정문은 <code>&lt;-</code> 사용</li>
-<li>동일 관계 비교 <code>=</code> 사용</li>
+<h3 id="스택"><a href="#스택" class="headerlink" title="스택"></a>스택</h3><ul>
+<li>한쪽 끝에서만 자료를 넣고 뺄 수 있는 자료구조 (LIFO)</li>
+<li>push, pop, empty, top</li>
+<li><p>일차원 배열 하나로 구현 가능</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> <span class="built_in">stack</span>[<span class="number">10000</span>];</span><br><span class="line"><span class="keyword">int</span> size = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>[size] = data;</span><br><span class="line">    size += <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>[size - <span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    size -= <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>구현된 라이브러리 사용</p>
+<ul>
+<li>C++: std::stack</li>
+<li>Java: Stack</li>
 </ul>
-<h4 id="함수선언"><a href="#함수선언" class="headerlink" title="함수선언"></a>함수선언</h4><p>Algorithm name(인수1, 인수2)</p>
-<h4 id="구조적표현"><a href="#구조적표현" class="headerlink" title="구조적표현"></a>구조적표현</h4><ul>
-<li>if … then … (else …)</li>
-<li>while … do</li>
-<li>repeat … until</li>
-<li>loop … do</li>
-<li>for … do</li>
-<li>array: name[i], name[i, j]</li>
+</li>
 </ul>
-<h4 id="함수표현"><a href="#함수표현" class="headerlink" title="함수표현"></a>함수표현</h4><ul>
-<li>호출: 함수명(인수들)</li>
-<li>반환: return value</li>
+<h4 id="응용문제"><a href="#응용문제" class="headerlink" title="응용문제"></a>응용문제</h4><ul>
+<li>단어 뒤집기 (9093)</li>
+<li>괄호 (9012)</li>
+<li>스택 수열 (1874)</li>
+<li>에디터 (1406) (링크드 리스트로 풀이 가능)</li>
+<li>단어 뒤집기2 (17413)</li>
+<li>쇠막대기 (10799)</li>
+</ul>
+<p>** c++ 입력 관련 정리</p>
+<ul>
+<li><p>getline() : 띄어쓰기/공백을 포함한 문자열을 입력 받을 수 있음</p>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> str;</span><br><span class="line">getline(<span class="built_in">cin</span>, str);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cin.ignore() : <code>cin &gt;&gt; n</code>으로 정수를 입력받고 바로 <code>getline(cin, str)</code>로 문자열을 입력받고자 할 경우 정수값을 입력한 뒤 누른 엔터가 버퍼에 남아있다가 str에 저장된다. 이럴 때 <code>cin.ignore()</code>로 입력 버퍼의 내용을 제거시켜주면 된다.</p>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="built_in">string</span> str;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line"><span class="comment">//cin은 띄어쓰기, 엔터, 탭을 기준으로 입력값을 나누고, 이런 문자들이 나오면 무시하기 때문에 버퍼에 그대로 남아있다. 하지만 getline()의 경우 delim을 지정해주지 않으면 엔터('\n')를 기준으로 입력을 받아들인다.</span></span><br><span class="line"><span class="built_in">cin</span>.ignore();</span><br><span class="line">getline(<span class="built_in">cin</span>, str);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cin.get() : char 하나 입력 받을 수 있음</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> str[<span class="number">256</span>];</span><br><span class="line"><span class="built_in">cin</span>.get(str, <span class="number">256</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cin &gt;&gt; str : cin으로 string도 입력받을 수 있음 (띄어쓰기 전까지 입력받음)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> str;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; str;</span><br></pre></td></tr></table></figure>
+<p>(<code>cout &lt;&lt; str</code> 처럼 cout으로 string을 출력할 수는 없음)</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">char</span> c : str)&#123;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>문자열은 크게 2가지 형태로 입력가능. C에서와 같이 char str[] 형태로 받는 방법과 <string>헤더파일의 string 클래스를 이용하는 방법. 주의, strlen 함수는 O(n), size 함수는 O(1)이다.</string></p>
+</li>
 </ul>
             
 
@@ -248,7 +269,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Programming/">Programming</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Algorithm/">Algorithm</a>
 
             </div>
         
@@ -259,7 +280,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/09/05/algorithm1/" data-tooltip="[알고리즘]알고리즘 기초" aria-label="PREVIOUS: [알고리즘]알고리즘 기초">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/10/01/queue/" data-tooltip="[알고리즘]자료구조_큐" aria-label="PREVIOUS: [알고리즘]자료구조_큐">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -268,7 +289,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/08/29/array/" data-tooltip="[자료구조]배열, 구조체" aria-label="NEXT: [자료구조]배열, 구조체">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/09/09/C/" data-tooltip="C++" aria-label="NEXT: C++">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -331,7 +352,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/09/05/algorithm1/" data-tooltip="[알고리즘]알고리즘 기초" aria-label="PREVIOUS: [알고리즘]알고리즘 기초">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/10/01/queue/" data-tooltip="[알고리즘]자료구조_큐" aria-label="PREVIOUS: [알고리즘]자료구조_큐">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -340,7 +361,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/08/29/array/" data-tooltip="[자료구조]배열, 구조체" aria-label="NEXT: [자료구조]배열, 구조체">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/09/09/C/" data-tooltip="C++" aria-label="NEXT: C++">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -428,9 +449,9 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'https://Ujoy7851.github.io/2019/08/29/Pseudocode/';
+                 this.page.url = 'https://Ujoy7851.github.io/2019/09/10/stack/';
                  
-                    this.page.identifier = '2019/08/29/Pseudocode/';
+                    this.page.identifier = '2019/09/10/stack/';
                  
              };
             (function() {

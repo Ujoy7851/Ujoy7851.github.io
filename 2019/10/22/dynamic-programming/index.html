@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="UJoyBlog">
-    <title>Pseudocode - UJoyBlog</title>
+    <title>dynamic programming - UJoyBlog</title>
     <meta name="author" content="Ujoy">
     
     
@@ -15,19 +15,19 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg"},"articleBody":"\nPseudocode 의사코드란일반적인 언어로  코드를 흉내내어 알고리즘을 써놓은 코드로, 프로그램을 작성하기 전에 알고리즘의 모델을 대략적으로 모델링하는데 사용한다. 프로그래밍 언어처럼 엄밀한 문법을 따를 필요가 없다.\n수식표현\n연산자는 일반적 수학 심볼 사용\n배정문은 &lt;- 사용\n동일 관계 비교 = 사용\n\n함수선언Algorithm name(인수1, 인수2)\n구조적표현\nif … then … (else …)\nwhile … do\nrepeat … until\nloop … do\nfor … do\narray: name[i], name[i, j]\n\n함수표현\n호출: 함수명(인수들)\n반환: return value\n","dateCreated":"2019-08-29T23:58:53+09:00","dateModified":"2019-09-05T13:25:49+09:00","datePublished":"2019-08-29T23:58:53+09:00","description":"Psuedocode란?","headline":"Pseudocode","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://Ujoy7851.github.io/2019/08/29/Pseudocode/"},"publisher":{"@type":"Organization","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg","logo":{"@type":"ImageObject","url":"egg.jpg"}},"url":"https://Ujoy7851.github.io/2019/08/29/Pseudocode/","keywords":"Programming"}</script>
-    <meta name="description" content="Psuedocode란?">
-<meta name="keywords" content="Programming">
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg"},"articleBody":"\n다이나믹 프로그래밍 (DP)\n큰 문제를 작은 문제로 나눠서 푸는 알고리즘\n다이나믹 프로그래밍은 작게 나눈 문제끼리 중복되지만 분할정복은 그렇지 않다는 점에서 차이가 있다.\n\nDP로 해결가능한 문제의 속성\nOverlapping Subproblem\n큰 문제와 작은 문제를 같은 방법으로 풀 수 있다.\n문제를 작은 문제로 쪼갤 수 있다.\n예: 피보나치 수열 Fn = Fn-1 + Fn-2\n\n\nOptimal Substructure\n문제의 정답을 작은 문제의 정답에서 구할 수 있다.\n문제의 크기에 상관없이 어떤 한 문제의 정답은 일정하다.\n\n\n\n\nOptimal Substructure를 만족하기 때문에, 같은 문제는 구할 때마다 정답이 같으므로, 다이나믹 프로그래밍에서 각 문제는 한 번만 푼다.\n한 번 구한 정답은 배열에 저장해놓는 식으로 메모하듯이 구현하는 것을 Memoization이라고 한다.\n점화식을 만들어 풀이\n\n12345678910111213141516//memoization을 적용한 피보나치 수를 구하는 함수//Top-down//O(N)int memo[100];int fibonacci(int n)&#123;    if(n &lt;= 1)&#123;        return n;    &#125;    else&#123;        if(memo[n] &gt; 0)&#123;            return memo[n];        &#125;        memo[n] = fibonacci(n-1) + fibonacci(n-2);        return memo[n];    &#125;&#125;\n구현 방식\nTop-down\n재귀로 푸는 방식\n\n\nBottom-up\n작은 문제부터 차례대로 푸는 방식\n반복문으로 구현12345678910//int d[100];int fibonacci(int n)&#123;    d[0];    d[1];    fof(int i = 2; i &lt; n; i++)&#123;        d[i] = d[i-1] + d[i-2];    &#125;    return d[n];&#125;\n\n\n\n\n\n재귀로 푸는 경우 스택오버플로우를 조심해야하나 구현이 잘된 경우 발생하지 않음\n둘 중에 편한 방식 하나를 골라 연습\n\n관련 연습문제\n1로 만들기 (1463)\n2xn 타일링 (11726)\n2xn 타일링2 (11727)\n1, 2, 3 더하기 (9095)\n카드 구매하기 (11052)\n카드 구매하기2 (16194)\n1, 2, 3 더하기 5 (15990)\n쉬운 계단 수 (10844)\n이친수 (2193)\n가장 긴 증가하는 부분 수열 (11053)\n가장 긴 증가하는 부분 수열 4 (14002)\n연속합 (1912)\n제곱수의 합 (1699)\n합분해 (2225)\n…\n1, 2, 3 더하기 3 (15988)\nRGB거리 (1149)\n동물원 (1309)\n오르막 수 (11057)\n스티커 (9465)\n포도주 시식 (2156)\n정수 삼각형 (1932)\n가장 큰 증가 부분 수열 (11055)\n가장 긴 감소하는 부분 수열 (11722)\n가장 긴 바이토닉 부분 수열 (11054)\n연속합 2 (13398)\n타일 채우기 (2133)\n…\n동물원 (1309)\nRGB거리 2 (17404)\n합분해 (2225)\n","dateCreated":"2019-10-22T21:17:45+09:00","dateModified":"2019-11-02T12:43:37+09:00","datePublished":"2019-10-22T21:17:45+09:00","description":"다이나믹 프로그래밍이란?","headline":"dynamic programming","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://Ujoy7851.github.io/2019/10/22/dynamic-programming/"},"publisher":{"@type":"Organization","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg","logo":{"@type":"ImageObject","url":"egg.jpg"}},"url":"https://Ujoy7851.github.io/2019/10/22/dynamic-programming/","keywords":"Algorithm"}</script>
+    <meta name="description" content="다이나믹 프로그래밍이란?">
+<meta name="keywords" content="Algorithm">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Pseudocode">
-<meta property="og:url" content="https://Ujoy7851.github.io/2019/08/29/Pseudocode/index.html">
+<meta property="og:title" content="dynamic programming">
+<meta property="og:url" content="https://Ujoy7851.github.io/2019/10/22/dynamic-programming/index.html">
 <meta property="og:site_name" content="UJoyBlog">
-<meta property="og:description" content="Psuedocode란?">
+<meta property="og:description" content="다이나믹 프로그래밍이란?">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-05T04:25:49.541Z">
+<meta property="og:updated_time" content="2019-11-02T03:43:37.608Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pseudocode">
-<meta name="twitter:description" content="Psuedocode란?">
+<meta name="twitter:title" content="dynamic programming">
+<meta name="twitter:description" content="다이나믹 프로그래밍이란?">
     
     
         
@@ -194,14 +194,14 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title">
-            Pseudocode
+            dynamic programming
         </h1>
     
     
         <div class="post-meta">
-    <time datetime="2019-08-29T23:58:53+09:00">
+    <time datetime="2019-10-22T21:17:45+09:00">
 	
-		    Aug 29, 2019
+		    Oct 22, 2019
     	
     </time>
     
@@ -220,24 +220,77 @@
     <div class="post-content markdown">
         <div class="main-content-wrap">
             <!-- excerpt --><p></p>
-<h4 id="Pseudocode-의사코드란"><a href="#Pseudocode-의사코드란" class="headerlink" title="Pseudocode 의사코드란"></a>Pseudocode 의사코드란</h4><p>일반적인 언어로  코드를 흉내내어 알고리즘을 써놓은 코드로, 프로그램을 작성하기 전에 알고리즘의 모델을 대략적으로 모델링하는데 사용한다. 프로그래밍 언어처럼 엄밀한 문법을 따를 필요가 없다.</p>
-<h4 id="수식표현"><a href="#수식표현" class="headerlink" title="수식표현"></a>수식표현</h4><ul>
-<li>연산자는 일반적 수학 심볼 사용</li>
-<li>배정문은 <code>&lt;-</code> 사용</li>
-<li>동일 관계 비교 <code>=</code> 사용</li>
+<h3 id="다이나믹-프로그래밍-DP"><a href="#다이나믹-프로그래밍-DP" class="headerlink" title="다이나믹 프로그래밍 (DP)"></a>다이나믹 프로그래밍 (DP)</h3><ul>
+<li>큰 문제를 작은 문제로 나눠서 푸는 알고리즘</li>
+<li>다이나믹 프로그래밍은 작게 나눈 문제끼리 중복되지만 분할정복은 그렇지 않다는 점에서 차이가 있다.</li>
 </ul>
-<h4 id="함수선언"><a href="#함수선언" class="headerlink" title="함수선언"></a>함수선언</h4><p>Algorithm name(인수1, 인수2)</p>
-<h4 id="구조적표현"><a href="#구조적표현" class="headerlink" title="구조적표현"></a>구조적표현</h4><ul>
-<li>if … then … (else …)</li>
-<li>while … do</li>
-<li>repeat … until</li>
-<li>loop … do</li>
-<li>for … do</li>
-<li>array: name[i], name[i, j]</li>
+<h3 id="DP로-해결가능한-문제의-속성"><a href="#DP로-해결가능한-문제의-속성" class="headerlink" title="DP로 해결가능한 문제의 속성"></a>DP로 해결가능한 문제의 속성</h3><ol>
+<li>Overlapping Subproblem<ul>
+<li>큰 문제와 작은 문제를 같은 방법으로 풀 수 있다.</li>
+<li>문제를 작은 문제로 쪼갤 수 있다.</li>
+<li>예: 피보나치 수열 Fn = Fn-1 + Fn-2</li>
 </ul>
-<h4 id="함수표현"><a href="#함수표현" class="headerlink" title="함수표현"></a>함수표현</h4><ul>
-<li>호출: 함수명(인수들)</li>
-<li>반환: return value</li>
+</li>
+<li>Optimal Substructure<ul>
+<li>문제의 정답을 작은 문제의 정답에서 구할 수 있다.</li>
+<li>문제의 크기에 상관없이 어떤 한 문제의 정답은 일정하다.</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Optimal Substructure를 만족하기 때문에, 같은 문제는 구할 때마다 정답이 같으므로, 다이나믹 프로그래밍에서 각 문제는 한 번만 푼다.</li>
+<li>한 번 구한 정답은 배열에 저장해놓는 식으로 메모하듯이 구현하는 것을 Memoization이라고 한다.</li>
+<li>점화식을 만들어 풀이</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//memoization을 적용한 피보나치 수를 구하는 함수</span></span><br><span class="line"><span class="comment">//Top-down</span></span><br><span class="line"><span class="comment">//O(N)</span></span><br><span class="line"><span class="keyword">int</span> memo[<span class="number">100</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fibonacci</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt;= <span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(memo[n] &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> memo[n];</span><br><span class="line">        &#125;</span><br><span class="line">        memo[n] = fibonacci(n<span class="number">-1</span>) + fibonacci(n<span class="number">-2</span>);</span><br><span class="line">        <span class="keyword">return</span> memo[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="구현-방식"><a href="#구현-방식" class="headerlink" title="구현 방식"></a>구현 방식</h3><ol>
+<li>Top-down<ul>
+<li>재귀로 푸는 방식</li>
+</ul>
+</li>
+<li>Bottom-up<ul>
+<li>작은 문제부터 차례대로 푸는 방식</li>
+<li>반복문으로 구현<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="keyword">int</span> d[<span class="number">100</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fibonacci</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    d[<span class="number">0</span>];</span><br><span class="line">    d[<span class="number">1</span>];</span><br><span class="line">    fof(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; n; i++)&#123;</span><br><span class="line">        d[i] = d[i<span class="number">-1</span>] + d[i<span class="number">-2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> d[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>재귀로 푸는 경우 스택오버플로우를 조심해야하나 구현이 잘된 경우 발생하지 않음</li>
+<li>둘 중에 편한 방식 하나를 골라 연습</li>
+</ul>
+<h3 id="관련-연습문제"><a href="#관련-연습문제" class="headerlink" title="관련 연습문제"></a>관련 연습문제</h3><ul>
+<li>1로 만들기 (1463)</li>
+<li>2xn 타일링 (11726)</li>
+<li>2xn 타일링2 (11727)</li>
+<li>1, 2, 3 더하기 (9095)</li>
+<li>카드 구매하기 (11052)</li>
+<li>카드 구매하기2 (16194)</li>
+<li>1, 2, 3 더하기 5 (15990)</li>
+<li>쉬운 계단 수 (10844)</li>
+<li>이친수 (2193)</li>
+<li>가장 긴 증가하는 부분 수열 (11053)</li>
+<li>가장 긴 증가하는 부분 수열 4 (14002)</li>
+<li>연속합 (1912)</li>
+<li>제곱수의 합 (1699)</li>
+<li>합분해 (2225)</li>
+<li>…</li>
+<li>1, 2, 3 더하기 3 (15988)</li>
+<li>RGB거리 (1149)</li>
+<li>동물원 (1309)</li>
+<li>오르막 수 (11057)</li>
+<li>스티커 (9465)</li>
+<li>포도주 시식 (2156)</li>
+<li>정수 삼각형 (1932)</li>
+<li>가장 큰 증가 부분 수열 (11055)</li>
+<li>가장 긴 감소하는 부분 수열 (11722)</li>
+<li>가장 긴 바이토닉 부분 수열 (11054)</li>
+<li>연속합 2 (13398)</li>
+<li>타일 채우기 (2133)</li>
+<li>…</li>
+<li>동물원 (1309)</li>
+<li>RGB거리 2 (17404)</li>
+<li>합분해 (2225)</li>
 </ul>
             
 
@@ -248,7 +301,7 @@
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/Programming/">Programming</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/Algorithm/">Algorithm</a>
 
             </div>
         
@@ -258,8 +311,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/09/05/algorithm1/" data-tooltip="[알고리즘]알고리즘 기초" aria-label="PREVIOUS: [알고리즘]알고리즘 기초">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -268,7 +320,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/08/29/array/" data-tooltip="[자료구조]배열, 구조체" aria-label="NEXT: [자료구조]배열, 구조체">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/10/06/math/" data-tooltip="math" aria-label="NEXT: math">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -330,8 +382,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/09/05/algorithm1/" data-tooltip="[알고리즘]알고리즘 기초" aria-label="PREVIOUS: [알고리즘]알고리즘 기초">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left" aria-hidden="true"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -340,7 +391,7 @@
             <li class="post-action">
                 
                     
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/08/29/array/" data-tooltip="[자료구조]배열, 구조체" aria-label="NEXT: [자료구조]배열, 구조체">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/10/06/math/" data-tooltip="math" aria-label="NEXT: math">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -428,9 +479,9 @@
     
         <script>
              var disqus_config = function () {
-                 this.page.url = 'https://Ujoy7851.github.io/2019/08/29/Pseudocode/';
+                 this.page.url = 'https://Ujoy7851.github.io/2019/10/22/dynamic-programming/';
                  
-                    this.page.identifier = '2019/08/29/Pseudocode/';
+                    this.page.identifier = '2019/10/22/dynamic-programming/';
                  
              };
             (function() {
