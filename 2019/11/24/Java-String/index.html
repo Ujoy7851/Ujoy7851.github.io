@@ -1,0 +1,523 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="UJoyBlog">
+    <title>[Java]String 문자열 - UJoyBlog</title>
+    <meta name="author" content="Ujoy">
+    
+    
+        <link rel="icon" href="https://Ujoy7851.github.io/assets/images/favicon.png">
+    
+    
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
+    
+    <script type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg"},"articleBody":"\nString자바에서 문자열에 해당하는 자료형\nString 인스턴스는 한 번 생성되면 그 값을 읽기만 할 수 있고, 변경할 수 없다. 자바에서 + 연산자를 이용해 문자열 결합을 수행하면 기존 문자열이 변경되는 것이 아니라 새로운 String 인스턴스가 생성된다.\n문자열 선언 및 할당1234567String a = \"Happy Java\";String b = \"a\";String c = \"123\";String a = new String(\"Happy Java\");String b = new String(\"a\");String c = new String(\"123\");\n첫번째 방식을 사용하는게 가독성도 좋고 컴파일 시 최적화에 도움을 준다.\nString은 리터럴로 표기가 가능하지만 primitive 자료형이 아닌 참조형타입이다.\n대표적인 String 메소드\n\n\n메소드\n설명\n\n\n\n\nchar charAt(int index)\n해당 문자열의 특정 인덱스에 해당하는 문자를 반환함.\n\n\nint compareTo(String str)\n해당 문자열을 인수로 전달된 문자열과 사전 편찬 순으로 비교함. 대소문자를 구분함. 두 문자열이 같으면 0, 해당 문자열이 인수로 전달된 문자열보다 작으면 음수, 크면 양수를 반환함.\n\n\nint compareToIgnoreCase(String str)\n해당 문자열을 인수로 전달된 문자열과 대소문자를 구분하지 않고 사전 편찬 순으로 비교함.\n\n\nString concat(String str)\n해당 문자열의 뒤에 인수로 전달된 문자열을 추가한 새로운 문자열을 반환함.\n\n\nint indexOf(int ch)\nint indexOf(String str)\n해당 문자열에서 특정 문자나 문자열이 처음으로 등장하는 위치의 인덱스를 반환함.\n\n\nint indexOf(int ch, int fromIndex), int indexOf(String str, int fromIndex)\n해당 문자열에서 특정 문자나 문자열이 전달된 인덱스 이후에 처음으로 등장하는 위치의 인덱스를 반환함. 포함되어 있지 않는 경우 -1을 반환함. 대소문자를 구분함.\n\n\nint lastIndexOf(int ch)\n해당 문자열에서 특정 문자가 마지막으로 등장하는 위치의 인덱스를 반환함.\n\n\nint lastIndexOf(int ch, int fromIndex)\n해당 문자열에서 특정 문자가 전달된 인덱스 이후에 마지막으로 등장하는 위치의 인덱스를 반환함.\n\n\nString[] split(String regex)\n해당 문자열을 전달된 정규 표현식(regular expression)에 따라 나눠서 반환함.\n\n\nString substring(int beginIndex)\n해당 문자열의 전달된 인덱스부터 끝까지를 새로운 문자열로 반환함.\n\n\nString substring(int begin, int end)\n해당 문자열의 전달된 시작 인덱스부터 마지막 인덱스까지를 새로운 문자열로 반환함.\n\n\nString toLowerCase()\n해당 문자열의 모든 문자를 소문자로 변환함.\n\n\nString toUpperCase()\n해당 문자열의 모든 문자를 대문자로 변환함.\n\n\nString trim()\n해당 문자열의 맨 앞과 맨 뒤에 포함된 모든 공백 문자를 제거함.\n\n\nlength()\n해당 문자열의 길이를 반환함.\n\n\nisEmpty()\n해당 문자열의 길이가 0이면 true를 반환하고, 아니면 false를 반환함.\n\n\nequals()\n해당 문자열이 인수와 동일한 값을 가지고 있는지를 비교하여 결과값을 리턴함. 같으면 true, 다르면 false\n\n\nString replaceAll()\n문자열 중 특정 문자를 다른 문자로 바꿔줌\n\n\n\n\nString 객체의 값을 비교할때는 equals를 사용해야 한다. ==를 사용할 경우 참조값을 비교해 동일한 객체인지 판별하기 때문에 값이 같아도 false를 반환한다.\n\nfor each문 String에 적용하는 법\n123456789101112for (char c : \"xyz\")  //이렇게 할 경우 compile error 발생String str = \"xyz\";str.chars().forEachOrdered(i -&gt; System.out.print((char)i));for (String s : \"xyz\".split(\"\")) &#123;  System.out.println(s);&#125;for (char ch: \"xyz\".toCharArray()) &#123;&#125;\n","dateCreated":"2019-11-24T20:53:18+09:00","dateModified":"2019-11-24T20:56:47+09:00","datePublished":"2019-11-24T20:53:18+09:00","description":"자바 String 문자열 정리","headline":"[Java]String 문자열","image":[],"mainEntityOfPage":{"@type":"WebPage","@id":"https://Ujoy7851.github.io/2019/11/24/Java-String/"},"publisher":{"@type":"Organization","name":"Ujoy","sameAs":["https://github.com/Ujoy7851"],"image":"egg.jpg","logo":{"@type":"ImageObject","url":"egg.jpg"}},"url":"https://Ujoy7851.github.io/2019/11/24/Java-String/","keywords":"Java"}</script>
+    <meta name="description" content="자바 String 문자열 정리">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="[Java]String 문자열">
+<meta property="og:url" content="https://Ujoy7851.github.io/2019/11/24/Java-String/index.html">
+<meta property="og:site_name" content="UJoyBlog">
+<meta property="og:description" content="자바 String 문자열 정리">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-24T11:56:47.649Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Java]String 문자열">
+<meta name="twitter:description" content="자바 String 문자열 정리">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="https://Ujoy7851.github.io/assets/images/egg.jpg"/>
+    
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/style-c4ozcsklz4kht2pebhp44xorvyverh23toayhn7i6ubrpyedak24hv1v0hyd.min.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">UJoyBlog</a>
+    </div>
+    
+        
+            <a class="header-right-picture " href="#about">
+        
+        
+            <img class="header-picture" src="/assets/images/egg.jpg" alt="Author&#39;s picture">
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/egg.jpg" alt="Author&#39;s picture">
+                </a>
+                <h4 class="sidebar-profile-name">Ujoy</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>기억력을 믿지 못해 블로그를 시작했다.</p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/ " title="Home">
+                    
+                        <i class="sidebar-button-icon fa fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-categories" title="Categories">
+                    
+                        <i class="sidebar-button-icon fa fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-tags" title="Tags">
+                    
+                        <i class="sidebar-button-icon fa fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/all-archives" title="Archives">
+                    
+                        <i class="sidebar-button-icon fa fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link open-algolia-search" href="#search" title="Search">
+                    
+                        <i class="sidebar-button-icon fa fa-search" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Search</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="#about" title="About">
+                    
+                        <i class="sidebar-button-icon fa fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="https://github.com/Ujoy7851" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fab fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a class="sidebar-button-link " href="/atom.xml" title="RSS">
+                    
+                        <i class="sidebar-button-icon fa fa-rss" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">RSS</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title">
+            [Java]String 문자열
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time datetime="2019-11-24T20:53:18+09:00">
+	
+		    Nov 24, 2019
+    	
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/Programming/">Programming</a>
+
+
+    
+</div>
+
+    
+</div>
+
+    
+    <div class="post-content markdown">
+        <div class="main-content-wrap">
+            <!-- excerpt --><p></p>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p>자바에서 문자열에 해당하는 자료형</p>
+<p>String 인스턴스는 한 번 생성되면 그 값을 읽기만 할 수 있고, 변경할 수 없다. 자바에서 <code>+</code> 연산자를 이용해 문자열 결합을 수행하면 기존 문자열이 변경되는 것이 아니라 새로운 String 인스턴스가 생성된다.</p>
+<h3 id="문자열-선언-및-할당"><a href="#문자열-선언-및-할당" class="headerlink" title="문자열 선언 및 할당"></a>문자열 선언 및 할당</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String a = <span class="string">"Happy Java"</span>;</span><br><span class="line">String b = <span class="string">"a"</span>;</span><br><span class="line">String c = <span class="string">"123"</span>;</span><br><span class="line"></span><br><span class="line">String a = <span class="keyword">new</span> String(<span class="string">"Happy Java"</span>);</span><br><span class="line">String b = <span class="keyword">new</span> String(<span class="string">"a"</span>);</span><br><span class="line">String c = <span class="keyword">new</span> String(<span class="string">"123"</span>);</span><br></pre></td></tr></table></figure>
+<p>첫번째 방식을 사용하는게 가독성도 좋고 컴파일 시 최적화에 도움을 준다.</p>
+<p>String은 리터럴로 표기가 가능하지만 primitive 자료형이 아닌 참조형타입이다.</p>
+<h3 id="대표적인-String-메소드"><a href="#대표적인-String-메소드" class="headerlink" title="대표적인 String 메소드"></a>대표적인 String 메소드</h3><table>
+<thead>
+<tr>
+<th>메소드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>char charAt(int index)</td>
+<td>해당 문자열의 특정 인덱스에 해당하는 문자를 반환함.</td>
+</tr>
+<tr>
+<td>int compareTo(String str)</td>
+<td>해당 문자열을 인수로 전달된 문자열과 사전 편찬 순으로 비교함. 대소문자를 구분함. 두 문자열이 같으면 0, 해당 문자열이 인수로 전달된 문자열보다 작으면 음수, 크면 양수를 반환함.</td>
+</tr>
+<tr>
+<td>int compareToIgnoreCase(String str)</td>
+<td>해당 문자열을 인수로 전달된 문자열과 대소문자를 구분하지 않고 사전 편찬 순으로 비교함.</td>
+</tr>
+<tr>
+<td>String concat(String str)</td>
+<td>해당 문자열의 뒤에 인수로 전달된 문자열을 추가한 새로운 문자열을 반환함.</td>
+</tr>
+<tr>
+<td>int indexOf(int ch)</td>
+<td>int indexOf(String str)</td>
+<td>해당 문자열에서 특정 문자나 문자열이 처음으로 등장하는 위치의 인덱스를 반환함.</td>
+</tr>
+<tr>
+<td>int indexOf(int ch, int fromIndex), int indexOf(String str, int fromIndex)</td>
+<td>해당 문자열에서 특정 문자나 문자열이 전달된 인덱스 이후에 처음으로 등장하는 위치의 인덱스를 반환함. 포함되어 있지 않는 경우 -1을 반환함. 대소문자를 구분함.</td>
+</tr>
+<tr>
+<td>int lastIndexOf(int ch)</td>
+<td>해당 문자열에서 특정 문자가 마지막으로 등장하는 위치의 인덱스를 반환함.</td>
+</tr>
+<tr>
+<td>int lastIndexOf(int ch, int fromIndex)</td>
+<td>해당 문자열에서 특정 문자가 전달된 인덱스 이후에 마지막으로 등장하는 위치의 인덱스를 반환함.</td>
+</tr>
+<tr>
+<td>String[] split(String regex)</td>
+<td>해당 문자열을 전달된 정규 표현식(regular expression)에 따라 나눠서 반환함.</td>
+</tr>
+<tr>
+<td>String substring(int beginIndex)</td>
+<td>해당 문자열의 전달된 인덱스부터 끝까지를 새로운 문자열로 반환함.</td>
+</tr>
+<tr>
+<td>String substring(int begin, int end)</td>
+<td>해당 문자열의 전달된 시작 인덱스부터 마지막 인덱스까지를 새로운 문자열로 반환함.</td>
+</tr>
+<tr>
+<td>String toLowerCase()</td>
+<td>해당 문자열의 모든 문자를 소문자로 변환함.</td>
+</tr>
+<tr>
+<td>String toUpperCase()</td>
+<td>해당 문자열의 모든 문자를 대문자로 변환함.</td>
+</tr>
+<tr>
+<td>String trim()</td>
+<td>해당 문자열의 맨 앞과 맨 뒤에 포함된 모든 공백 문자를 제거함.</td>
+</tr>
+<tr>
+<td>length()</td>
+<td>해당 문자열의 길이를 반환함.</td>
+</tr>
+<tr>
+<td>isEmpty()</td>
+<td>해당 문자열의 길이가 0이면 true를 반환하고, 아니면 false를 반환함.</td>
+</tr>
+<tr>
+<td>equals()</td>
+<td>해당 문자열이 인수와 동일한 값을 가지고 있는지를 비교하여 결과값을 리턴함. 같으면 true, 다르면 false</td>
+</tr>
+<tr>
+<td>String replaceAll()</td>
+<td>문자열 중 특정 문자를 다른 문자로 바꿔줌</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>String 객체의 값을 비교할때는 <code>equals</code>를 사용해야 한다. <code>==</code>를 사용할 경우 참조값을 비교해 동일한 객체인지 판별하기 때문에 값이 같아도 false를 반환한다.</p>
+</li>
+<li><p>for each문 String에 적용하는 법</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">char</span> c : <span class="string">"xyz"</span>)  <span class="comment">//이렇게 할 경우 compile error 발생</span></span><br><span class="line"></span><br><span class="line">String str = <span class="string">"xyz"</span>;</span><br><span class="line">str.chars().forEachOrdered(i -&gt; System.out.print((<span class="keyword">char</span>)i));</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (String s : <span class="string">"xyz"</span>.split(<span class="string">""</span>)) &#123;</span><br><span class="line">  System.out.println(s);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">char</span> ch: <span class="string">"xyz"</span>.toCharArray()) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/Java/">Java</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/11/24/sort/" data-tooltip="[알고리즘]정렬 알고리즘" aria-label="NEXT: [알고리즘]정렬 알고리즘">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+        
+            
+                <li class="post-action">
+                    <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+                <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2019 Ujoy. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2019/11/24/sort/" data-tooltip="[알고리즘]정렬 알고리즘" aria-label="NEXT: [알고리즘]정렬 알고리즘">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+        
+            
+                <li class="post-action">
+                    <a class="post-action-btn btn btn--default" href="#disqus_thread">
+                        <i class="fa fa-comment"></i>
+                    </a>
+                </li>
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#" aria-label="Back to top">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                
+
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-times"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/egg.jpg" alt="Author&#39;s picture">
+        
+            <h4 id="about-card-name">Ujoy</h4>
+        
+            <div id="about-card-bio"><p>기억력을 믿지 못해 블로그를 시작했다.</p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br>
+                <p>student</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker-alt"></i>
+                <br>
+                대한민국
+            </div>
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/cover-v1.2.0.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/script-dbd16rvloemmuxdzniplmnxxvwoz24eya9wol0b7vvmlokgqsjivmb8dnscy.min.js"></script>
+<!--SCRIPTS END-->
+
+    
+        <script>
+             var disqus_config = function () {
+                 this.page.url = 'https://Ujoy7851.github.io/2019/11/24/Java-String/';
+                 
+                    this.page.identifier = '2019/11/24/Java-String/';
+                 
+             };
+            (function() {
+                var d = document, s = d.createElement('script');
+                var disqus_shortname = 'UJoyBlog';
+                s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+    
+
+
+
+    </body>
+</html>
